@@ -23,7 +23,7 @@ public class ObjectVelocityStopper : MonoBehaviour {
 	IEnumerator ActualKiller(){
 		Vector3 currentVelocity;
 		Vector3 currentAngularVelocity;
-
+        
 		while (rigidBody.velocity != Vector3.zero || rigidBody.angularVelocity != Vector3.zero) {
 			currentVelocity = rigidBody.velocity;
 			currentAngularVelocity = rigidBody.angularVelocity;
