@@ -194,6 +194,7 @@ namespace VRTK
             transform.rotation = startRotation;
             transform.SetParent(startParent);
             OnDraggableItemReset(SetEventPayload(startParent.gameObject));
+
         }
 
         protected virtual UIDraggableItemEventArgs SetEventPayload(GameObject target)
