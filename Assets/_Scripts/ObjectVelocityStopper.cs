@@ -56,12 +56,10 @@ public class ObjectVelocityStopper : MonoBehaviour {
 	}
 
     private void OnTriggerStay(Collider collider)
-    {
-        print("Inside trigger");
-        
+    {        
         if (!vrtkInteractableObject.IsGrabbed() && rigidBody.velocity == Vector3.zero && rigidBody.angularVelocity == Vector3.zero)
         {
-            print("waiting to stop");
+            //print("waiting to stop");
             if (collider.gameObject.tag == "Boundry")
             {
                 rigidBody.velocity = Vector3.zero;
@@ -74,6 +72,8 @@ public class ObjectVelocityStopper : MonoBehaviour {
 
     IEnumerator MoveToPreviousLocation()
     {
+        //StopAllCoroutines();
+
         rigidBody.isKinematic = true;
         while(transform.position != previousPosition)
         {
