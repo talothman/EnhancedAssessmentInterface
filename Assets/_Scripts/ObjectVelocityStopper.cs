@@ -4,14 +4,26 @@ using UnityEngine;
 using VRTK;
 
 public class ObjectVelocityStopper : MonoBehaviour {
-	public float damppingFactor = 5;
-	VRTK_InteractableObject thisObject;
+    public float damppingFactor = 5;
+
+    Vector3 previousPosition;
+    Quaternion previousRotation;
+
+	VRTK_InteractableObject vrtkInteractableObject;
 	Rigidbody rigidBody;
 
 	// Use this for initialization
 	void Start () {
-		thisObject = GetComponent<VRTK_InteractableObject> ();
-		thisObject.InteractableObjectUngrabbed += CoroutineStarter;
+		vrtkInteractableObject = GetComponent<VRTK_InteractableObject> ();
+        previousPosition = transform.position;
+        previousRotation = transform.rotation;
+        
+        // update previous position once object is grabbed
+        vrtkInteractableObject.InteractableObjectGrabbed += (object sender, InteractableObjectEventArgs e) => {
+            previousPosition = transform.position;
+            previousRotation = transform.rotation;
+        };
+        vrtkInteractableObject.InteractableObjectUngrabbed += CoroutineStarter;
 
 		rigidBody = GetComponent<Rigidbody> ();
 	}
@@ -25,13 +37,50 @@ public class ObjectVelocityStopper : MonoBehaviour {
 		Vector3 currentAngularVelocity;
         
 		while (rigidBody.velocity != Vector3.zero || rigidBody.angularVelocity != Vector3.zero) {
-			currentVelocity = rigidBody.velocity;
-			currentAngularVelocity = rigidBody.angularVelocity;
+            if(!(rigidBody.velocity.magnitude < .01f))
+            {
+                currentVelocity = rigidBody.velocity;
+                currentAngularVelocity = rigidBody.angularVelocity;
+            }
+            else
+            {
+                currentVelocity = Vector3.zero;
+                currentAngularVelocity = Vector3.zero;
+            }
 
-			rigidBody.velocity = Vector3.Lerp (currentVelocity, Vector3.zero, damppingFactor * Time.deltaTime);
-			rigidBody.angularVelocity = Vector3.Lerp (currentAngularVelocity, Vector3.zero, damppingFactor *Time.deltaTime);
+            rigidBody.velocity = Vector3.Lerp(currentVelocity, Vector3.zero, damppingFactor * Time.deltaTime);
+            rigidBody.angularVelocity = Vector3.Lerp(currentAngularVelocity, Vector3.zero, damppingFactor * Time.deltaTime);
 
-			yield return null;
+            yield return null;
 		}
 	}
+
+    private void OnTriggerStay(Collider collider)
+    {
+        print("Inside trigger");
+        
+        if (!vrtkInteractableObject.IsGrabbed() && rigidBody.velocity == Vector3.zero && rigidBody.angularVelocity == Vector3.zero)
+        {
+            print("waiting to stop");
+            if (collider.gameObject.tag == "Boundry")
+            {
+                rigidBody.velocity = Vector3.zero;
+                rigidBody.angularVelocity = Vector3.zero;
+                StartCoroutine(MoveToPreviousLocation());
+                print("checking for tag");
+            }
+        }
+    }
+
+    IEnumerator MoveToPreviousLocation()
+    {
+        rigidBody.isKinematic = true;
+        while(transform.position != previousPosition)
+        {
+            transform.position = Vector3.Lerp(transform.position, previousPosition, damppingFactor * Time.deltaTime);
+            transform.rotation = Quaternion.Lerp(transform.rotation, previousRotation, damppingFactor * Time.deltaTime);
+            yield return null;
+        }
+        rigidBody.isKinematic = false;
+    }
 }
