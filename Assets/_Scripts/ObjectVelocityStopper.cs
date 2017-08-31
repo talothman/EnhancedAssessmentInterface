@@ -12,6 +12,7 @@ public class ObjectVelocityStopper : MonoBehaviour {
 	VRTK_InteractableObject vrtkInteractableObject;
 	Rigidbody rigidBody;
 
+    Coroutine currentRunningCoroutine;
 	// Use this for initialization
 	void Start () {
 		vrtkInteractableObject = GetComponent<VRTK_InteractableObject> ();
@@ -23,21 +24,23 @@ public class ObjectVelocityStopper : MonoBehaviour {
             previousPosition = transform.position;
             previousRotation = transform.rotation;
         };
-        vrtkInteractableObject.InteractableObjectUngrabbed += CoroutineStarter;
+        vrtkInteractableObject.InteractableObjectUngrabbed += SlowDownCoroutineWrapper;
 
 		rigidBody = GetComponent<Rigidbody> ();
 	}
 
-	private void CoroutineStarter(object sender, InteractableObjectEventArgs e){
-		StartCoroutine(ActualKiller());
+	private void SlowDownCoroutineWrapper(object sender, InteractableObjectEventArgs e){
+        if (currentRunningCoroutine != null)
+            StopCoroutine(currentRunningCoroutine);
+        currentRunningCoroutine = StartCoroutine(SlowDown());
 	}
 
-	IEnumerator ActualKiller(){
-		Vector3 currentVelocity;
+	IEnumerator SlowDown(){
+        Vector3 currentVelocity;
 		Vector3 currentAngularVelocity;
         
 		while (rigidBody.velocity != Vector3.zero || rigidBody.angularVelocity != Vector3.zero) {
-            if(!(rigidBody.velocity.magnitude < .01f))
+            if(!(rigidBody.velocity.magnitude < .05f))
             {
                 currentVelocity = rigidBody.velocity;
                 currentAngularVelocity = rigidBody.angularVelocity;
@@ -56,16 +59,16 @@ public class ObjectVelocityStopper : MonoBehaviour {
 	}
 
     private void OnTriggerStay(Collider collider)
-    {        
-        if (!vrtkInteractableObject.IsGrabbed() && rigidBody.velocity == Vector3.zero && rigidBody.angularVelocity == Vector3.zero)
+    {
+        if(collider.gameObject.tag == "Boundry")
         {
-            //print("waiting to stop");
-            if (collider.gameObject.tag == "Boundry")
+            print("checking for tag");
+            if (!vrtkInteractableObject.IsGrabbed() && rigidBody.velocity == Vector3.zero && rigidBody.angularVelocity == Vector3.zero)
             {
+                print("waiting to stop " + collider.gameObject.name + collider.gameObject.transform.position);
                 rigidBody.velocity = Vector3.zero;
                 rigidBody.angularVelocity = Vector3.zero;
                 StartCoroutine(MoveToPreviousLocation());
-                print("checking for tag");
             }
         }
     }
@@ -73,7 +76,6 @@ public class ObjectVelocityStopper : MonoBehaviour {
     IEnumerator MoveToPreviousLocation()
     {
         //StopAllCoroutines();
-
         rigidBody.isKinematic = true;
         while(transform.position != previousPosition)
         {
@@ -82,5 +84,6 @@ public class ObjectVelocityStopper : MonoBehaviour {
             yield return null;
         }
         rigidBody.isKinematic = false;
+        StopAllCoroutines();
     }
 }
