@@ -124,6 +124,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d1e65fafaa91cc24fbd4015deeb68d13, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &49858833
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 49858831}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 11ac6b2aa70b54943ac156005deef2bf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isAnswer: 0
 --- !u!4 &49858839 stripped
 Transform:
   m_PrefabParentObject: {fileID: 4570109487948462, guid: d69ee5adebad67b47b732398aca746ef,
@@ -199,7 +211,7 @@ Prefab:
     - target: {fileID: 114000012880271118, guid: 5d323709f0cbd454196647d9d8f2dd84,
         type: 2}
       propertyPath: highlightColor.g
-      value: 0.9852941
+      value: 0.6846849
       objectReference: {fileID: 0}
     - target: {fileID: 114000012880271118, guid: 5d323709f0cbd454196647d9d8f2dd84,
         type: 2}
@@ -209,16 +221,21 @@ Prefab:
     - target: {fileID: 114000012880271118, guid: 5d323709f0cbd454196647d9d8f2dd84,
         type: 2}
       propertyPath: highlightColor.r
-      value: 0.49264705
+      value: 0.99264705
       objectReference: {fileID: 0}
     - target: {fileID: 114000012880271118, guid: 5d323709f0cbd454196647d9d8f2dd84,
         type: 2}
       propertyPath: highlightColor.b
-      value: 0.49264705
+      value: 0.021896647
       objectReference: {fileID: 0}
     - target: {fileID: 1000010066341254, guid: 5d323709f0cbd454196647d9d8f2dd84, type: 2}
       propertyPath: m_Name
       value: AnswerSnapDropZone
+      objectReference: {fileID: 0}
+    - target: {fileID: 114000012880271118, guid: 5d323709f0cbd454196647d9d8f2dd84,
+        type: 2}
+      propertyPath: highlightColor.a
+      value: 0.434
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 5d323709f0cbd454196647d9d8f2dd84, type: 2}
@@ -240,6 +257,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   snapZoneTextGameObject: {fileID: 306695515}
+  gameManager3D: {fileID: 1744896713}
 --- !u!1001 &154681545
 Prefab:
   m_ObjectHideFlags: 0
@@ -569,7 +587,7 @@ MonoBehaviour:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 379131263}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: cd828872d92c3a94090d23b7b719f1e7, type: 3}
   m_Name: 
@@ -589,17 +607,17 @@ MonoBehaviour:
     OnPush:
       m_PersistentCalls:
         m_Calls:
-        - m_Target: {fileID: 0}
-          m_MethodName: 
-          m_Mode: 1
+        - m_Target: {fileID: 1744896713}
+          m_MethodName: CheckAnswer
+          m_Mode: 2
           m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: 
+            m_ObjectArgument: {fileID: 379131263}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
             m_IntArgument: 0
             m_FloatArgument: 0
             m_StringArgument: 
             m_BoolArgument: 0
-          m_CallState: 2
+          m_CallState: 1
       m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine, Version=0.0.0.0, Culture=neutral,
         PublicKeyToken=null
 --- !u!114 &379131265
@@ -619,6 +637,18 @@ MonoBehaviour:
   customOutlineModels: []
   customOutlineModelPaths: []
   enableSubmeshHighlight: 0
+--- !u!114 &379131266
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 379131263}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 11ac6b2aa70b54943ac156005deef2bf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isAnswer: 1
 --- !u!114 &379131270
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -705,7 +735,7 @@ Prefab:
     - target: {fileID: 114302713062087086, guid: d69ee5adebad67b47b732398aca746ef,
         type: 2}
       propertyPath: m_Text
-      value: Absorbing
+      value: Tentative
       objectReference: {fileID: 0}
     - target: {fileID: 114302713062087086, guid: d69ee5adebad67b47b732398aca746ef,
         type: 2}
@@ -765,6 +795,11 @@ Prefab:
       propertyPath: m_Name
       value: AnswerCube1
       objectReference: {fileID: 0}
+    - target: {fileID: 114529332161208284, guid: d69ee5adebad67b47b732398aca746ef,
+        type: 2}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 114482426116607114, guid: d69ee5adebad67b47b732398aca746ef, type: 2}
     - {fileID: 114494263585557086, guid: d69ee5adebad67b47b732398aca746ef, type: 2}
@@ -786,7 +821,7 @@ MonoBehaviour:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 394014739}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: cd828872d92c3a94090d23b7b719f1e7, type: 3}
   m_Name: 
@@ -805,7 +840,18 @@ MonoBehaviour:
   events:
     OnPush:
       m_PersistentCalls:
-        m_Calls: []
+        m_Calls:
+        - m_Target: {fileID: 1744896713}
+          m_MethodName: CheckAnswer
+          m_Mode: 2
+          m_Arguments:
+            m_ObjectArgument: {fileID: 394014739}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 1
       m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine, Version=0.0.0.0, Culture=neutral,
         PublicKeyToken=null
 --- !u!114 &394014741
@@ -814,7 +860,7 @@ MonoBehaviour:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 394014739}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: c08517e04830d6d44a13c5ea5f574181, type: 3}
   m_Name: 
@@ -825,13 +871,25 @@ MonoBehaviour:
   customOutlineModels: []
   customOutlineModelPaths: []
   enableSubmeshHighlight: 0
---- !u!114 &394014746
+--- !u!114 &394014742
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 394014739}
   m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 11ac6b2aa70b54943ac156005deef2bf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isAnswer: 0
+--- !u!114 &394014746
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 394014739}
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: dc2315305343a584e8758755b54117c5, type: 3}
   m_Name: 
@@ -1393,7 +1451,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: What is the <i>antonym</i> of the word <b>Interesting</b>?
+  m_Text: What is the <i>synonym</i> of the word <b>Cogent</b>?
 --- !u!222 &723593905
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -1537,7 +1595,7 @@ Prefab:
     - target: {fileID: 114302713062087086, guid: d69ee5adebad67b47b732398aca746ef,
         type: 2}
       propertyPath: m_Text
-      value: Gracious
+      value: Truculent
       objectReference: {fileID: 0}
     - target: {fileID: 114302713062087086, guid: d69ee5adebad67b47b732398aca746ef,
         type: 2}
@@ -1903,6 +1961,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d1e65fafaa91cc24fbd4015deeb68d13, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &1102178006
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1102178004}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 11ac6b2aa70b54943ac156005deef2bf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isAnswer: 0
 --- !u!4 &1102178012 stripped
 Transform:
   m_PrefabParentObject: {fileID: 4570109487948462, guid: d69ee5adebad67b47b732398aca746ef,
@@ -2141,7 +2211,7 @@ MonoBehaviour:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1252436401}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: cd828872d92c3a94090d23b7b719f1e7, type: 3}
   m_Name: 
@@ -2161,17 +2231,17 @@ MonoBehaviour:
     OnPush:
       m_PersistentCalls:
         m_Calls:
-        - m_Target: {fileID: 0}
-          m_MethodName: 
-          m_Mode: 1
+        - m_Target: {fileID: 1744896713}
+          m_MethodName: CheckAnswer
+          m_Mode: 2
           m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: 
+            m_ObjectArgument: {fileID: 1252436401}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
             m_IntArgument: 0
             m_FloatArgument: 0
             m_StringArgument: 
             m_BoolArgument: 0
-          m_CallState: 2
+          m_CallState: 1
       m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine, Version=0.0.0.0, Culture=neutral,
         PublicKeyToken=null
 --- !u!114 &1252436403
@@ -2191,6 +2261,18 @@ MonoBehaviour:
   customOutlineModels: []
   customOutlineModelPaths: []
   enableSubmeshHighlight: 0
+--- !u!114 &1252436404
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1252436401}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 11ac6b2aa70b54943ac156005deef2bf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isAnswer: 0
 --- !u!114 &1252436408
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2281,7 +2363,7 @@ Prefab:
     - target: {fileID: 114302713062087086, guid: d69ee5adebad67b47b732398aca746ef,
         type: 2}
       propertyPath: m_Text
-      value: Ungrossing
+      value: Convincing
       objectReference: {fileID: 0}
     - target: {fileID: 114302713062087086, guid: d69ee5adebad67b47b732398aca746ef,
         type: 2}
@@ -2501,6 +2583,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d1e65fafaa91cc24fbd4015deeb68d13, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &1330837558
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1330837556}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 11ac6b2aa70b54943ac156005deef2bf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isAnswer: 1
 --- !u!4 &1330837564 stripped
 Transform:
   m_PrefabParentObject: {fileID: 4570109487948462, guid: d69ee5adebad67b47b732398aca746ef,
@@ -2794,6 +2888,18 @@ GameObject:
   m_PrefabParentObject: {fileID: 1255410083471560, guid: d69ee5adebad67b47b732398aca746ef,
     type: 2}
   m_PrefabInternal: {fileID: 1951036330}
+--- !u!114 &1390954488
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1390954487}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 11ac6b2aa70b54943ac156005deef2bf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isAnswer: 0
 --- !u!4 &1390954495 stripped
 Transform:
   m_PrefabParentObject: {fileID: 4570109487948462, guid: d69ee5adebad67b47b732398aca746ef,
@@ -3054,7 +3160,7 @@ Prefab:
     - target: {fileID: 114302713062087086, guid: d69ee5adebad67b47b732398aca746ef,
         type: 2}
       propertyPath: m_Text
-      value: Homley
+      value: Forced
       objectReference: {fileID: 0}
     - target: {fileID: 114302713062087086, guid: d69ee5adebad67b47b732398aca746ef,
         type: 2}
@@ -3329,8 +3435,9 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 1744896712}
+  - component: {fileID: 1744896713}
   m_Layer: 0
-  m_Name: Manager
+  m_Name: 3DGameManager
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3349,6 +3456,20 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1744896713
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1744896711}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 04973a10af8010e4c89d0c2dd81a9aa4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  selectGameObject: {fileID: 1311979418}
+  manipGameObject: {fileID: 974562576}
+  answerFeedbackMaterial: {fileID: 0}
 --- !u!1 &1822304771
 GameObject:
   m_ObjectHideFlags: 0
@@ -3739,7 +3860,7 @@ MonoBehaviour:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1988814011}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: cd828872d92c3a94090d23b7b719f1e7, type: 3}
   m_Name: 
@@ -3759,17 +3880,17 @@ MonoBehaviour:
     OnPush:
       m_PersistentCalls:
         m_Calls:
-        - m_Target: {fileID: 0}
-          m_MethodName: 
-          m_Mode: 1
+        - m_Target: {fileID: 1744896713}
+          m_MethodName: CheckAnswer
+          m_Mode: 2
           m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: 
+            m_ObjectArgument: {fileID: 1988814011}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
             m_IntArgument: 0
             m_FloatArgument: 0
             m_StringArgument: 
             m_BoolArgument: 0
-          m_CallState: 2
+          m_CallState: 1
       m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine, Version=0.0.0.0, Culture=neutral,
         PublicKeyToken=null
 --- !u!114 &1988814013
@@ -3789,6 +3910,18 @@ MonoBehaviour:
   customOutlineModels: []
   customOutlineModelPaths: []
   enableSubmeshHighlight: 0
+--- !u!114 &1988814014
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1988814011}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 11ac6b2aa70b54943ac156005deef2bf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isAnswer: 0
 --- !u!114 &1988814018
 MonoBehaviour:
   m_ObjectHideFlags: 0

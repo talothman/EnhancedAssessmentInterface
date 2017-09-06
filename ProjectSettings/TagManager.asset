@@ -6,6 +6,7 @@ TagManager:
   tags:
   - AnswerCubes
   - Boundry
+  - Man
   layers:
   - Default
   - TransparentFX
