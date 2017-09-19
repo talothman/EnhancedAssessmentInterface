@@ -28,5 +28,14 @@ public class GameManager2D : MonoBehaviour {
             selectGameObject.SetActive(false);
             manipGameObject.SetActive(true);
         }
+        else
+        {
+            LoadFinalLevel();
+        }
+    }
+
+    public void LoadFinalLevel()
+    {
+        SceneManager.LoadScene(3);
     }
 }

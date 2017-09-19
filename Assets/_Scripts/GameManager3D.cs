@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+
 using VRTK;
 
 public class GameManager3D : MonoBehaviour {
@@ -12,7 +13,7 @@ public class GameManager3D : MonoBehaviour {
     public Material answerFeedbackMaterial;
 
     public void CheckAnswer(GameObject answerObject)
-    {      
+    {
         answerFeedbackMaterial = new Material(answerObject.GetComponent<Renderer>().material);
 
         if (answerObject.GetComponent<AnswerState>().isAnswer)
@@ -21,7 +22,7 @@ public class GameManager3D : MonoBehaviour {
             answerFeedbackMaterial.color = new Color(255f, 0f, 0f, 111f);
 
         answerObject.GetComponent<Renderer>().material = answerFeedbackMaterial;
-        //StartCoroutine(MoveToManipulation());
+        StartCoroutine(MoveToManipulation());
     }
 
     public IEnumerator MoveToManipulation()
