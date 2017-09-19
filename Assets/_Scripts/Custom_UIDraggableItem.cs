@@ -5,7 +5,12 @@ using UnityEngine.EventSystems;
 using VRTK;
 
 public class Custom_UIDraggableItem : VRTK_UIDraggableItem {
-    public GameManager2D gameManager2D;
+    public GameManager2DSort gameManager2D;
+
+    private void Start()
+    {
+        gameManager2D = GetComponent<SortAnswerState>().sceneGameManager;
+    }
 
     public override void OnEndDrag(PointerEventData eventData)
     {
@@ -18,7 +23,7 @@ public class Custom_UIDraggableItem : VRTK_UIDraggableItem {
         if (validDropZone != null)
         {
             transform.SetParent(validDropZone.transform);
-            gameManager2D.CheckAnswer(gameObject);
+            //UpdateSortState();
         }
         else
         {
@@ -51,10 +56,16 @@ public class Custom_UIDraggableItem : VRTK_UIDraggableItem {
                 pointer.OnUIPointerElementDragEnd(pointer.SetUIPointerEvent(pointer.pointerEventData.pointerPressRaycast, gameObject));
             }
             OnDraggableItemDropped(SetEventPayload(validDropZone));
+            UpdateSortState();
         }
-
+        UpdateSortState();
         validDropZone = null;
         startParent = null;
         startCanvas = null;
+    }
+
+    public void UpdateSortState()
+    {
+        GetComponent<SortAnswerState>().sortGroup.UpdateSortState();
     }
 }
