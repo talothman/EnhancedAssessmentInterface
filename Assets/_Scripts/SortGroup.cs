@@ -66,6 +66,8 @@ public class SortGroup : MonoBehaviour {
         {
             ColorAnswersRed();
         }
+
+        StartCoroutine(GameObject.FindGameObjectWithTag("SceneGameManager").GetComponent<GameManager2DSort>().MoveToManipulation());
     }
 
     public virtual void ColorAnswersGreen()

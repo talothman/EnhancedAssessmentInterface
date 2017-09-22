@@ -2382,7 +2382,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &974562577
 Transform:
   m_ObjectHideFlags: 0
@@ -2418,6 +2418,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   currentSortRanking: 
   currentXPositions: []
+  submitButton: {fileID: 0}
   sortSubmitButton: {fileID: 80512998}
 --- !u!1001 &1022879536
 Prefab:
@@ -3336,7 +3337,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &1311979419
 Transform:
   m_ObjectHideFlags: 0
@@ -4378,6 +4379,7 @@ MonoBehaviour:
   selectGameObject: {fileID: 1311979418}
   manipGameObject: {fileID: 974562576}
   currentlySelectedObject: {fileID: 1173986110}
+  GoToLevel: 1
   selectAnswers: []
   manipulationAnswers: []
   submitButton: {fileID: 0}

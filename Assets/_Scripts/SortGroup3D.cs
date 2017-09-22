@@ -8,6 +8,7 @@ public class SortGroup3D : SortGroup {
     private SortAnswerState3D[] sortAnswers;
     [SerializeField]
     private GameObject sortSubmitButton;
+    private GroupLineRendererController gLineRendererController;
 
     public override void Start()
     {
@@ -21,6 +22,13 @@ public class SortGroup3D : SortGroup {
             currentSortRanking[i] = sortAnswers[i].order;
             currentXPositions[i] = sortAnswers[i].GetComponent<Transform>().localPosition.x;
         }
+
+        gLineRendererController = GetComponent<GroupLineRendererController>();
+    }
+
+    public void HandleGrab(GameObject go)
+    {
+        //gLineRendererController.RemoveTransform(go);
     }
 
     public override void UpdateSortState()
@@ -34,6 +42,8 @@ public class SortGroup3D : SortGroup {
         {
             currentSortRanking[i] = sortAnswers[i].order;
         }
+
+        gLineRendererController.UpdateLineState();
     }
 
     public override void CheckSortStateAnswer()
