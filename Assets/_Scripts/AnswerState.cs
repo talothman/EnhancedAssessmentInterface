@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using VRTK;
 
 public class AnswerState : MonoBehaviour {
 
@@ -10,8 +11,9 @@ public class AnswerState : MonoBehaviour {
 
     private void Awake()
     {
-        sceneGameManager = GameObject.FindGameObjectWithTag("SceneGameManager").GetComponent<GameManager2DSort>();
+        sceneGameManager = GameObject.FindGameObjectWithTag("SceneGameManager").GetComponent(typeof(GameManager2DSort)) as GameManager2DSort;
         GetComponent<Button>().onClick.AddListener(() => sceneGameManager.SetCurrentlySelectedObject(gameObject));
+
     }
 
 }

@@ -1267,7 +1267,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 11ac6b2aa70b54943ac156005deef2bf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isAnswer: 1
+  isAnswer: 0
   sceneGameManager: {fileID: 0}
 --- !u!225 &608256341
 CanvasGroup:
@@ -1572,7 +1572,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: The shape with the <b>3rd</b> most number of sides is?
+  m_Text: The shape with the <b>3rd</b> most number of faces is?
 --- !u!222 &764996740
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -1647,7 +1647,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 'Triangle
+  m_Text: 'Triangular
 
     Pyramid'
 --- !u!222 &828343171
@@ -1888,7 +1888,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 704b59be06fd21c449b8aad995988702, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sortAnswers: []
   currentSortRanking: 
   currentXPositions: []
   submitButton: {fileID: 1697896919}
@@ -2466,7 +2465,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 1744896713}
-        m_MethodName: CheckAnswer
+        m_MethodName: CheckSelectionAnswer
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -2855,7 +2854,11 @@ MonoBehaviour:
   selectGameObject: {fileID: 1101159221}
   manipGameObject: {fileID: 387494945}
   currentlySelectedObject: {fileID: 0}
-  selectAnswers: []
+  selectAnswers:
+  - {fileID: 608256342}
+  - {fileID: 404324786}
+  - {fileID: 293859038}
+  - {fileID: 325695205}
   manipulationAnswers: []
   submitButton: {fileID: 1401746010}
 --- !u!1 &1822304771

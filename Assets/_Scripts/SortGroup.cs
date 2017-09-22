@@ -6,13 +6,14 @@ using UnityEngine.UI;
 
 public class SortGroup : MonoBehaviour {
 
-    public SortAnswerState[] sortAnswers;
+    private SortAnswerState[] sortAnswers;
     public int[] currentSortRanking;
     public float[] currentXPositions;
-    public Button submitButton;
+    [SerializeField]
+    private Button submitButton;
 
     // Use this for initialization
-	void Start () {
+    public virtual void Start () {
         sortAnswers = GetComponentsInChildren<SortAnswerState>();
 
         currentSortRanking = new int[sortAnswers.Length];
@@ -25,7 +26,7 @@ public class SortGroup : MonoBehaviour {
         }
 	}
 
-    public void UpdateSortState()
+    public virtual void UpdateSortState()
     {
         if (!submitButton.interactable)
             submitButton.interactable = true;
@@ -38,7 +39,7 @@ public class SortGroup : MonoBehaviour {
         }
     }
 
-    public void CheckSortStateAnswer()
+    public virtual void CheckSortStateAnswer()
     {
         int previousRank = currentSortRanking[0];
         bool sorted = true;
@@ -67,7 +68,7 @@ public class SortGroup : MonoBehaviour {
         }
     }
 
-    private void ColorAnswersGreen()
+    public virtual void ColorAnswersGreen()
     {
         foreach(SortAnswerState sortAnswer in sortAnswers)
         {
@@ -75,7 +76,7 @@ public class SortGroup : MonoBehaviour {
         }
     }
 
-    private void ColorAnswersRed()
+    public virtual void ColorAnswersRed()
     {
         foreach (SortAnswerState sortAnswer in sortAnswers)
         {

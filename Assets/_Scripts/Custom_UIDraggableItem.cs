@@ -58,6 +58,7 @@ public class Custom_UIDraggableItem : VRTK_UIDraggableItem {
             OnDraggableItemDropped(SetEventPayload(validDropZone));
             UpdateSortState();
         }
+
         UpdateSortState();
         validDropZone = null;
         startParent = null;

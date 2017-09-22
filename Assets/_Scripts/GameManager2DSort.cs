@@ -8,21 +8,24 @@ public class GameManager2DSort : MonoBehaviour {
 
     enum GameManagerState {SELECTION, MINIPULATION};
 
-    GameManagerState twoDgameManagerState;
+    GameManagerState gameManagerState;
     public GameObject selectGameObject;
     public GameObject manipGameObject;
     public GameObject currentlySelectedObject;
 
-    public Image[] selectAnswers;
-    public Image[] manipulationAnswers;
-    public Button submitButton;
+    [SerializeField]
+    private Image[] selectAnswers;
+    [SerializeField]
+    private Image[] manipulationAnswers;
+    [SerializeField]
+    private Button submitButton;
 
     private void Start()
     {
-        twoDgameManagerState = GameManagerState.SELECTION;
+        gameManagerState = GameManagerState.SELECTION;
     }
 
-    public void SetCurrentlySelectedObject(GameObject selectedObject)
+    public virtual void SetCurrentlySelectedObject(GameObject selectedObject)
     {
         foreach(Image i in selectAnswers)
         {
@@ -36,7 +39,7 @@ public class GameManager2DSort : MonoBehaviour {
         currentlySelectedObject = selectedObject;
     }
 
-    public void CheckSelectionAnswer()
+    public virtual void CheckSelectionAnswer()
     {
         if (currentlySelectedObject == null)
             return;
@@ -49,21 +52,16 @@ public class GameManager2DSort : MonoBehaviour {
         StartCoroutine(MoveToManipulation());
     }
 
-    public void CheckManipulationAnswer()
-    {
-        //
-    }
-
     public IEnumerator MoveToManipulation()
     {
         yield return new WaitForSeconds(3f);
 
-        if (twoDgameManagerState == GameManagerState.SELECTION)
+        if (gameManagerState == GameManagerState.SELECTION)
         {
             selectGameObject.SetActive(false);
             manipGameObject.SetActive(true);
 
-            twoDgameManagerState = GameManagerState.MINIPULATION;
+            gameManagerState = GameManagerState.MINIPULATION;
         }
         else
         {
