@@ -103,7 +103,7 @@ public class GameManager3DSort : GameManager2DSort {
     {
         yield return new WaitForSeconds(3f);
         print("heeeere0");
-        if (gameManagerState == GameManagerState.SELECTION && questionIterationIndex >= 2)
+        if (gameManagerState == GameManagerState.SELECTION && questionIterationIndex >= selectGameObjects.Length-1)
         {
             selectGameObjects[questionIterationIndex].SetActive(false);
             questionIterationIndex = 0;
@@ -112,12 +112,12 @@ public class GameManager3DSort : GameManager2DSort {
             gameManagerState = GameManagerState.MINIPULATION;
             print("heeeere1");
         }
-        else if (gameManagerState == GameManagerState.MINIPULATION && questionIterationIndex >= 2)
+        else if (gameManagerState == GameManagerState.MINIPULATION && questionIterationIndex >= manipGameObjects.Length - 1)
         {
             print("heeeere2");
             LoadFinalLevel();
         }
-        else if (questionIterationIndex < 2)
+        else if (questionIterationIndex < selectGameObjects.Length-1 || questionIterationIndex < manipGameObjects.Length - 1)
         {
             print("heeeere3");
             if (gameManagerState == GameManagerState.SELECTION)
