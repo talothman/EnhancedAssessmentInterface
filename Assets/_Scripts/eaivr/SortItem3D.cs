@@ -8,6 +8,7 @@ namespace eaivr
     public class SortItem3D : SortItem
     {
         public SortAnswerGroup3D sortAnswerGroup3D;
+        public SortItemData sortItemData;
         SortAnswer3D[] threeDSortAnswers;
 
         void Start()
@@ -15,17 +16,19 @@ namespace eaivr
             if (sortAnswerGroup3D == null)
                 sortAnswerGroup3D = GetComponent<SortAnswerGroup3D>();
 
-            InsertItemData();
+            //InsertItemData();
         }
 
-        public override void InsertItemData()
+        public void InsertItemData(SortItemData sorItemData)
         {
             threeDSortAnswers = sortAnswerGroup3D.threeDSortAnswers;
-            canvasText.text = itemData.stem;
+            sortItemData = sorItemData;
+            canvasText.text = sortItemData.stem;
 
             for (int i = 0; i < threeDSortAnswers.Length; i++)
             {
-                threeDSortAnswers[i].GetComponentInChildren<Text>().text = itemData.answers[i];
+                threeDSortAnswers[i].GetComponentInChildren<Text>().text = sortItemData.sortAnswers[i].answerText;
+                threeDSortAnswers[i].correctOrder = sortItemData.sortAnswers[i].correctOrder;
             }
         }
 

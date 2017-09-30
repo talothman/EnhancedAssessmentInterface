@@ -8,12 +8,13 @@ namespace eaivr
     public class SortItem2D : SortItem
     {
         public SortAnswerGroup2D sortAnswerGroup2D;
+        public SortItemData sortItemData;
         SortAnswer2D[] sortAnswers;
 
         private void Start()
         {
             sortAnswers = sortAnswerGroup2D.twoDSortAnswers;
-            InsertItemData();
+            //InsertItemData();
         }
 
         public override void CheckSelectedAnswer()
@@ -45,13 +46,15 @@ namespace eaivr
             NextQuestion();
         }
 
-        public override void InsertItemData()
+        public void InsertItemData(SortItemData sorItemData)
         {
-            canvasText.text = itemData.stem;
+            sortItemData = sorItemData;
+            canvasText.text = sortItemData.stem;
 
             for (int i = 0; i < sortAnswers.Length; i++)
             {
-                sortAnswers[i].GetComponentInChildren<Text>().text = itemData.answers[i];
+                sortAnswers[i].GetComponentInChildren<Text>().text = sortItemData.sortAnswers[i].answerText;
+                sortAnswers[i].correctOrder = sortItemData.sortAnswers[i].correctOrder;
             }
         }
 

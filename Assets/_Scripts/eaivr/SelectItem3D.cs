@@ -9,6 +9,7 @@ namespace eaivr
     public class SelectItem3D : SelectItem
     {
         public SelectAnswer3D[] selectAnswers3D;
+        public SelectItemData selectItemData;
         public Material defaultMaterial;
         protected Material selectMaterial;
 
@@ -20,16 +21,18 @@ namespace eaivr
                 color = selectColor
             };
 
-            InsertItemData();
+            //InsertItemData();
         }
 
-        public override void InsertItemData()
+        public void InsertItemData(SelectItemData selItemData)
         {
-            canvasText.text = itemData.stem;
+            selectItemData = selItemData;
+            canvasText.text = selectItemData.stem;
 
             for (int i = 0; i < selectAnswers3D.Length; i++)
             {
-                selectAnswers3D[i].GetComponentInChildren<Text>().text = itemData.answers[i];
+                selectAnswers3D[i].GetComponentInChildren<Text>().text = selectItemData.selectAnswers[i].answerText;
+                selectAnswers3D[i].isKey = selectItemData.selectAnswers[i].isKey;
             }
         }
 

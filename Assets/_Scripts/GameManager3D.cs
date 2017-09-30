@@ -9,7 +9,7 @@ public class GameManager3D : MonoBehaviour {
 
     public GameObject selectGameObject;
     public GameObject manipGameObject;
-    bool loaded = false;
+    //bool loaded = false;
     public Material answerFeedbackMaterial;
 
     public void CheckAnswer(GameObject answerObject)

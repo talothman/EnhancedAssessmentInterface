@@ -11,7 +11,7 @@ public class TutorialManager3D : TutorialManager
     public Material defaultMat;
     Material selectedMat;
     public Color selectColor;
-    int stateIndex = 0;
+    //int stateIndex = 0;
 
     private void Start()
     {

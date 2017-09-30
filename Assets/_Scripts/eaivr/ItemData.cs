@@ -9,8 +9,8 @@ namespace eaivr
     {
         [SerializeField]
         public string stem;
-        [SerializeField]
-        public string[] answers;
+        //[SerializeField]
+        //public string[] answers;
     }
 }
 
