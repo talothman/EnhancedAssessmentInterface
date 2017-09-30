@@ -4,16 +4,16 @@ using UnityEngine;
 using VRTK;
 using VRTK.UnityEventHelper;
 
-public class AnswerState3D : MonoBehaviour {
-
-    public bool isAnswer = false;
+public class SelectState3DButton : MonoBehaviour {
     public bool isSelected = false;
-    public GameManager3DSort sceneGameManager;
+    public float sunAngle;
+    public TutorialManager3D sceneGameManager;
     private VRTK_Button_UnityEvents buttonEvents;
 
     private void Awake()
     {
-        sceneGameManager = GameObject.FindGameObjectWithTag("SceneGameManager").GetComponent<GameManager3DSort>();
+        if (sceneGameManager == null)
+            return;
 
         buttonEvents = GetComponent<VRTK_Button_UnityEvents>();
         if (buttonEvents == null)
@@ -21,9 +21,9 @@ public class AnswerState3D : MonoBehaviour {
             buttonEvents = gameObject.AddComponent<VRTK_Button_UnityEvents>();
         }
         buttonEvents.OnPushed.AddListener((object sender, Control3DEventArgs e) => {
-            sceneGameManager.SetCurrentlySelectedObject(gameObject);
+            sceneGameManager.SetSelectedButton(gameObject);
         });
-                
+
         GetComponent<VRTK_InteractableObject>().InteractableObjectUntouched += sceneGameManager.HighlightSelected;
     }
 }

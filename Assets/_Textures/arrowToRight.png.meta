@@ -1,6 +1,6 @@
 fileFormatVersion: 2
 guid: b80432912de07f749945f07d6eb23566
-timeCreated: 1506084618
+timeCreated: 1506611300
 licenseType: Pro
 TextureImporter:
   fileIDToRecycleName: {}
@@ -44,7 +44,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteBorder: {x: 11, y: 0, z: 39, w: 0}
   spritePixelsToUnits: 100
   alphaUsage: 1
   alphaIsTransparency: 1

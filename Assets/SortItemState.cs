@@ -2,16 +2,15 @@
 using System.Collections.Generic;
 using UnityEngine;
 using VRTK;
-
-public class SortAnswerState3D : MonoBehaviour {
+public class SortItemState : MonoBehaviour {
 
     public int order;
-    public GameManager3DSort sceneGameManager;
+    public TutorialManager3D sceneGameManager;
     public SortGroup3D sortGroup;
 
     protected virtual void Awake()
     {
-        sceneGameManager = GameObject.FindGameObjectWithTag("SceneGameManager").GetComponent<GameManager3DSort>();
+        sceneGameManager = GameObject.FindGameObjectWithTag("SceneGameManager").GetComponent<TutorialManager3D>();
         sortGroup = GetComponentInParent<SortGroup3D>();
 
         //GetComponent<VRTK_InteractableObject>().InteractableObjectGrabbed += SortAnswerState3D_InteractableObjectGrabbed;

@@ -83,7 +83,6 @@ public class GameManager3DSort : GameManager2DSort {
             yield return null;
 
         currentlySelectedObject.GetComponent<Renderer>().material = selectedMaterial;
-        print("Highlight Selected: " + currentlySelectedObject);
     }
 
     public override void CheckSelectionAnswer()
