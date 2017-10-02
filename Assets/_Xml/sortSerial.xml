@@ -1,36 +1,44 @@
 <?xml version="1.0" encoding="Windows-1252"?>
 <ArrayOfSortItemData xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
   <SortItemData>
-    <stem>This is the stem part of the question</stem>
+    <stem>The following words sorted alphabetically, from left to right are?</stem>
     <sortAnswers>
       <SortAnswerData>
-        <answerText>Answer 1</answerText>
-        <correctOrder>0</correctOrder>
+        <answerText>craftsman</answerText>
+        <correctOrder>1</correctOrder>
       </SortAnswerData>
       <SortAnswerData>
-        <answerText>Answer 2</answerText>
-        <correctOrder>0</correctOrder>
+        <answerText>crank</answerText>
+        <correctOrder>2</correctOrder>
       </SortAnswerData>
       <SortAnswerData>
-        <answerText>Answer 3</answerText>
-        <correctOrder>0</correctOrder>
+        <answerText>cranky</answerText>
+        <correctOrder>3</correctOrder>
       </SortAnswerData>
       <SortAnswerData>
-        <answerText>Answer 4</answerText>
+        <answerText>craft</answerText>
         <correctOrder>0</correctOrder>
       </SortAnswerData>
     </sortAnswers>
   </SortItemData>
   <SortItemData>
-    <stem>Sort Item 2</stem>
+    <stem>The following words sorted alphabetically, from left to right are?</stem>
     <sortAnswers>
       <SortAnswerData>
-        <answerText>Answer 1</answerText>
+        <answerText>trapeze</answerText>
         <correctOrder>0</correctOrder>
       </SortAnswerData>
       <SortAnswerData>
-        <answerText>Answer 2</answerText>
-        <correctOrder>0</correctOrder>
+        <answerText>trapper</answerText>
+        <correctOrder>1</correctOrder>
+      </SortAnswerData>
+      <SortAnswerData>
+        <answerText>treatment</answerText>
+        <correctOrder>3</correctOrder>
+      </SortAnswerData>
+      <SortAnswerData>
+        <answerText>traveler</answerText>
+        <correctOrder>2</correctOrder>
       </SortAnswerData>
     </sortAnswers>
   </SortItemData>

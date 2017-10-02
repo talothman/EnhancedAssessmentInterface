@@ -569,16 +569,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e9a02a27e3f6dc2439eaa101c3ba25df, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  itemData:
-    stem: FFFAAAAAA
-    answers:
-    - rt
-    - us
-    - heh
-    - ch
   canvasText: {fileID: 114524809863852900}
+  gameManager: {fileID: 0}
   submitGameObject: {fileID: 1981790301629806}
   sortAnswerGroup2D: {fileID: 114070039350443118}
+  sortItemData:
+    questionID: 0
+    stem: 
+    sortAnswers: []
 --- !u!114 &114433710339594498
 MonoBehaviour:
   m_ObjectHideFlags: 1

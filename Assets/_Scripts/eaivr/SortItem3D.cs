@@ -16,10 +16,10 @@ namespace eaivr
             if (sortAnswerGroup3D == null)
                 sortAnswerGroup3D = GetComponent<SortAnswerGroup3D>();
 
-            //InsertItemData();
+            gameManager = GameObject.FindGameObjectWithTag("GM").GetComponent<GameManager>();
         }
 
-        public void InsertItemData(SortItemData sorItemData)
+        public override void InsertItemData(SortItemData sorItemData)
         {
             threeDSortAnswers = sortAnswerGroup3D.threeDSortAnswers;
             sortItemData = sorItemData;
@@ -31,12 +31,7 @@ namespace eaivr
                 threeDSortAnswers[i].correctOrder = sortItemData.sortAnswers[i].correctOrder;
             }
         }
-
-        public override void NextQuestion()
-        {
-            throw new System.NotImplementedException();
-        }
-
+        
         public override void CheckSelectedAnswer()
         {
             SortAnswer3D[] sortAnswers = sortAnswerGroup3D.threeDSortAnswers;
@@ -64,8 +59,6 @@ namespace eaivr
             {
                 answeredCorreclty = false;
             }
-
-            NextQuestion();
         }
     }
 }

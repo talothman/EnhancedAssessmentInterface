@@ -10,13 +10,15 @@ namespace eaivr
         //move to selectItem
         public SelectAnswer2D[] selectAnswers2D;
         public SelectItemData selectItemData;
+        
         // consider moving to selectItem
         void Start()
         {
             //InsertItemData();
+            gameManager = GameObject.FindGameObjectWithTag("GM").GetComponent<GameManager>();
         }
 
-        public void InsertItemData(SelectItemData selItemData)
+        public override void InsertItemData(SelectItemData selItemData)
         {
             selectItemData = selItemData;
             canvasText.text = selectItemData.stem;
@@ -76,14 +78,9 @@ namespace eaivr
                         answeredCorreclty = false;
                     }
 
-                    NextQuestion();
+                    //NextQuestion();
                 }
             }
-        }
-
-        public override void NextQuestion()
-        {
-            throw new System.NotImplementedException();
         }
     }
 }

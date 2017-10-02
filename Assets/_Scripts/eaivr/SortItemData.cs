@@ -9,6 +9,7 @@ namespace eaivr
     [System.Xml.Serialization.XmlInclude(typeof(SortAnswerData))]
     public class SortItemData
     {
+        public int questionID;
         public string stem;
         public SortAnswerData[] sortAnswers;
     }

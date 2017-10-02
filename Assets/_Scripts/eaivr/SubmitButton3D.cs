@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 using VRTK;
 using VRTK.UnityEventHelper;
 
@@ -21,12 +22,21 @@ namespace eaivr
             }
 
             buttonEvents.OnPushed.AddListener(OnSelect);
-
         }
 
         protected void OnSelect(object sender, Control3DEventArgs e)
         {
             itemInParent.CheckSelectedAnswer();
+            GetComponentInChildren<Text>().text = "Next";
+            buttonEvents.OnPushed.RemoveListener(OnSelect);
+            buttonEvents.OnPushed.AddListener(OnNext);
+        }
+
+        protected void OnNext(object sender, Control3DEventArgs e)
+        {
+            //buttonEvents.OnPushed.RemoveListener(OnNext);
+            itemInParent.NextQuestion();
+
         }
         
     }

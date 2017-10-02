@@ -13,8 +13,10 @@ namespace eaivr
 
         private void Start()
         {
-            sortAnswers = sortAnswerGroup2D.twoDSortAnswers;
-            //InsertItemData();
+            if(sortAnswers == null)
+                sortAnswers = sortAnswerGroup2D.twoDSortAnswers;
+
+            gameManager = GameObject.FindGameObjectWithTag("GM").GetComponent<GameManager>();
         }
 
         public override void CheckSelectedAnswer()
@@ -42,13 +44,12 @@ namespace eaivr
             {
                 answeredCorreclty = false;
             }
-
-            NextQuestion();
         }
 
-        public void InsertItemData(SortItemData sorItemData)
+        public override void InsertItemData(SortItemData newSortItemData)
         {
-            sortItemData = sorItemData;
+            sortAnswers = sortAnswerGroup2D.twoDSortAnswers;
+            sortItemData = newSortItemData;
             canvasText.text = sortItemData.stem;
 
             for (int i = 0; i < sortAnswers.Length; i++)
@@ -56,11 +57,6 @@ namespace eaivr
                 sortAnswers[i].GetComponentInChildren<Text>().text = sortItemData.sortAnswers[i].answerText;
                 sortAnswers[i].correctOrder = sortItemData.sortAnswers[i].correctOrder;
             }
-        }
-
-        public override void NextQuestion()
-        {
-            throw new System.NotImplementedException();
         }
     }
 }

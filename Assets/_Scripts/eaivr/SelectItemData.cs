@@ -9,6 +9,7 @@ namespace eaivr
     [System.Xml.Serialization.XmlInclude(typeof(SelectAnswerData))]
     public class SelectItemData
     {
+        public int questionID;
         public string stem;
         public SelectAnswerData[] selectAnswers;
     }

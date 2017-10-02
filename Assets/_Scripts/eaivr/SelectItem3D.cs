@@ -21,10 +21,10 @@ namespace eaivr
                 color = selectColor
             };
 
-            //InsertItemData();
+            gameManager = GameObject.FindGameObjectWithTag("GM").GetComponent<GameManager>();
         }
 
-        public void InsertItemData(SelectItemData selItemData)
+        public override void InsertItemData(SelectItemData selItemData)
         {
             selectItemData = selItemData;
             canvasText.text = selectItemData.stem;
@@ -90,15 +90,9 @@ namespace eaivr
                         selectedAnswer.GetComponent<Renderer>().material.color = Color.red;
                         answeredCorreclty = false;
                     }
-
-                    NextQuestion();
                 }
+             // deactivate buttons
             }
-        }
-
-        public override void NextQuestion()
-        {
-            throw new System.NotImplementedException();
         }
     }
 }

@@ -8,7 +8,7 @@ TagManager:
   - Boundry
   - Man
   - TeleportIgnore
-  - SceneGameManager
+  - GM
   layers:
   - Default
   - TransparentFX

@@ -1,27 +1,43 @@
 <?xml version="1.0" encoding="Windows-1252"?>
 <ArrayOfSelectItemData xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
   <SelectItemData>
-    <stem>SelectItem 1</stem>
+    <stem>What is the 3rd word sorted alphabetically?</stem>
     <selectAnswers>
       <SelectAnswerData>
-        <answerText>3213</answerText>
+        <answerText>craftsman</answerText>
         <isKey>false</isKey>
       </SelectAnswerData>
       <SelectAnswerData>
-        <answerText>423</answerText>
+        <answerText>crank</answerText>
+        <isKey>true</isKey>
+      </SelectAnswerData>
+      <SelectAnswerData>
+        <answerText>cranky</answerText>
+        <isKey>false</isKey>
+      </SelectAnswerData>
+      <SelectAnswerData>
+        <answerText>craft</answerText>
         <isKey>false</isKey>
       </SelectAnswerData>
     </selectAnswers>
   </SelectItemData>
   <SelectItemData>
-    <stem>SelectItem 2</stem>
+    <stem>What is the 1st word sorted alphabetically?</stem>
     <selectAnswers>
       <SelectAnswerData>
-        <answerText>234234</answerText>
+        <answerText>trapeze</answerText>
+        <isKey>true</isKey>
+      </SelectAnswerData>
+      <SelectAnswerData>
+        <answerText>trapper</answerText>
         <isKey>false</isKey>
       </SelectAnswerData>
       <SelectAnswerData>
-        <answerText>234234</answerText>
+        <answerText>treatment</answerText>
+        <isKey>false</isKey>
+      </SelectAnswerData>
+      <SelectAnswerData>
+        <answerText>traveler</answerText>
         <isKey>false</isKey>
       </SelectAnswerData>
     </selectAnswers>

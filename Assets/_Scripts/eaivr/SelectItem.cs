@@ -8,6 +8,7 @@ namespace eaivr
     {
         public Color selectColor;
         public abstract void SetSelectedAnswer(GameObject selectedObject);
+        public abstract void InsertItemData(SelectItemData selectItemData);
     }
 }
 

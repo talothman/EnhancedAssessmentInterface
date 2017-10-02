@@ -2,13 +2,114 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public abstract class GameManager : MonoBehaviour {
+namespace eaivr
+{
+    enum Stage { SELECT, SORT }
 
-    public string pathToSelectBank;
-    public string pathToSortBank;
+    public class GameManager : MonoBehaviour
+    {
+        public string pathToSelectBank;
+        public string pathToSortBank;
 
-    public GameObject selectPrefab;
-    public GameObject sortPrefab;
+        public SelectItemData[] selectItemData;
+        public SortItemData[] sortItemData;
 
-    public abstract void Setup();
+        public GameObject selectItemTutorialPrefab;
+        public GameObject sortItemTutorialPrefab;
+
+        public GameObject selectItemPrefab;
+        public GameObject sortItemPrefab;
+
+        public int currentSelectItemIndex = 0;
+        public int currentSortItemIndex = 0;
+        public GameObject currentActiveItem;
+
+        //Stage currentStage;
+        bool loadedSelectTutorial = false;
+        bool loadedSortTutorial = false;
+
+        private void Start()
+        {
+            LoadQuestionsFromDisk();
+        }
+
+        public void LoadQuestionsFromDisk()
+        {
+            pathToSelectBank = Application.dataPath + "/_Xml/selectSerial.xml";
+            pathToSortBank = Application.dataPath + "/_Xml/sortSerial.xml";
+
+            selectItemData = XmlUtility.Deserialize<SelectItemData[]>(pathToSelectBank);
+            sortItemData = XmlUtility.Deserialize<SortItemData[]>(pathToSortBank);
+            Next();
+        }
+
+        public void LoadSelectTutorial()
+        {
+            loadedSelectTutorial = true;
+            Next();
+        }
+
+        public void LoadSelectQuestion()
+        {
+            if (currentActiveItem != null)
+                Destroy(currentActiveItem);
+
+            StartCoroutine(PauseBeforeInstantiateSelect());
+        }
+
+        IEnumerator PauseBeforeInstantiateSelect()
+        {
+            yield return new WaitForSeconds(0.6f);
+            currentActiveItem = Instantiate(selectItemPrefab);
+            currentActiveItem.GetComponent<SelectItem>().InsertItemData(selectItemData[currentSelectItemIndex++]);
+        }
+
+        public void LoadSortTutorial()
+        {
+            loadedSortTutorial = true;
+            Next();
+        }
+
+        public void LoadSortQuestion()
+        {
+            if (currentActiveItem != null)
+                Destroy(currentActiveItem, 0.5f);
+
+            StartCoroutine(PauseBeforeInstantiateSort());
+        }
+
+        IEnumerator PauseBeforeInstantiateSort()
+        {
+            yield return new WaitForSeconds(0.6f);
+            currentActiveItem = Instantiate(sortItemPrefab);
+            currentActiveItem.GetComponent<SortItem>().InsertItemData(sortItemData[currentSortItemIndex++]);
+        }
+
+        public void LoadOutro()
+        {
+            Application.Quit();
+        }
+
+        public void Next()
+        {
+            if (!loadedSelectTutorial)
+            {
+                LoadSelectTutorial();
+            }
+            else if (loadedSelectTutorial && currentSelectItemIndex < selectItemData.Length)
+            {
+                LoadSelectQuestion();
+            }
+            else if (!loadedSortTutorial)
+            {
+                LoadSortTutorial();
+            }
+            else if (loadedSortTutorial && currentSortItemIndex < sortItemData.Length)
+            {
+                LoadSortQuestion();
+            }
+            else
+                LoadOutro();
+        }
+    }    
 }

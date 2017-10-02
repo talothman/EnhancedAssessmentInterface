@@ -1507,16 +1507,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 79723d1f24b2adf43859dcbbfbbee3ad, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  itemData:
-    stem: What is the word that means poop in arabic?
-    answers:
-    - fus
-    - shiz
-    - khara
-    - umak
   canvasText: {fileID: 114657676808061662}
+  gameManager: {fileID: 0}
   submitGameObject: {fileID: 1134523967139174}
   sortAnswerGroup3D: {fileID: 114990659602864612}
+  sortItemData:
+    questionID: 0
+    stem: 
+    sortAnswers: []
 --- !u!114 &114674629208017096
 MonoBehaviour:
   m_ObjectHideFlags: 1
