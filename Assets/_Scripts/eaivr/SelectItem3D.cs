@@ -14,7 +14,7 @@ namespace eaivr
         protected Material selectMaterial;
 
         // Use this for initialization
-        protected void Start()
+        protected virtual void Start()
         {
             selectMaterial = new Material(defaultMaterial)
             {

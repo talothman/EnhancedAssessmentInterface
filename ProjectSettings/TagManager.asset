@@ -9,6 +9,8 @@ TagManager:
   - Man
   - TeleportIgnore
   - GM
+  - SceneGameManager
+  - light
   layers:
   - Default
   - TransparentFX

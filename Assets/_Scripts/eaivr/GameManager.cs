@@ -35,9 +35,15 @@ namespace eaivr
 
         public void LoadQuestionsFromDisk()
         {
+
+#if UNITY_EDITOR
             pathToSelectBank = Application.dataPath + "/_Xml/selectSerial.xml";
             pathToSortBank = Application.dataPath + "/_Xml/sortSerial.xml";
+#endif
 
+#if UNITY_STANDALONE_WIN
+
+#endif
             selectItemData = XmlUtility.Deserialize<SelectItemData[]>(pathToSelectBank);
             sortItemData = XmlUtility.Deserialize<SortItemData[]>(pathToSortBank);
             Next();
@@ -45,8 +51,9 @@ namespace eaivr
 
         public void LoadSelectTutorial()
         {
+            currentActiveItem = Instantiate(selectItemTutorialPrefab);
+            currentActiveItem.GetComponent<SelectItem>().InsertItemData(selectItemData[currentSelectItemIndex++]);
             loadedSelectTutorial = true;
-            Next();
         }
 
         public void LoadSelectQuestion()
@@ -98,6 +105,7 @@ namespace eaivr
             }
             else if (loadedSelectTutorial && currentSelectItemIndex < selectItemData.Length)
             {
+                // wait until shift to sun is done
                 LoadSelectQuestion();
             }
             else if (!loadedSortTutorial)

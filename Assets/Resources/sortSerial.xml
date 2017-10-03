@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="Windows-1252"?>
+<ArrayOfSortItemData xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <SortItemData>
+    <stem>The following words sorted alphabetically, from left to right are?</stem>
+    <sortAnswers>
+      <SortAnswerData>
+        <answerText>craftsman</answerText>
+        <correctOrder>1</correctOrder>
+      </SortAnswerData>
+      <SortAnswerData>
+        <answerText>crank</answerText>
+        <correctOrder>2</correctOrder>
+      </SortAnswerData>
+      <SortAnswerData>
+        <answerText>cranky</answerText>
+        <correctOrder>3</correctOrder>
+      </SortAnswerData>
+      <SortAnswerData>
+        <answerText>craft</answerText>
+        <correctOrder>0</correctOrder>
+      </SortAnswerData>
+    </sortAnswers>
+  </SortItemData>
+  <SortItemData>
+    <stem>The following words sorted alphabetically, from left to right are?</stem>
+    <sortAnswers>
+      <SortAnswerData>
+        <answerText>trapeze</answerText>
+        <correctOrder>0</correctOrder>
+      </SortAnswerData>
+      <SortAnswerData>
+        <answerText>trapper</answerText>
+        <correctOrder>1</correctOrder>
+      </SortAnswerData>
+      <SortAnswerData>
+        <answerText>treatment</answerText>
+        <correctOrder>3</correctOrder>
+      </SortAnswerData>
+      <SortAnswerData>
+        <answerText>traveler</answerText>
+        <correctOrder>2</correctOrder>
+      </SortAnswerData>
+    </sortAnswers>
+  </SortItemData>
+</ArrayOfSortItemData>

@@ -738,14 +738,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f3fc6f503f6c9704e816227fed6dfea0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  itemData:
-    stem: What is the name of your face?
-    answers:
-    - Khara
-    - Popo
-    - Arse farts
-    - falafel
   canvasText: {fileID: 114196938064814488}
+  gameManager: {fileID: 0}
   submitGameObject: {fileID: 1478772867609386}
   selectColor: {r: 0.9558824, g: 0.5774848, b: 0.2867647, a: 1}
   selectAnswers2D:
@@ -753,6 +747,10 @@ MonoBehaviour:
   - {fileID: 114925396641449536}
   - {fileID: 114950540668222822}
   - {fileID: 114042420216741488}
+  selectItemData:
+    questionID: 0
+    stem: 
+    selectAnswers: []
 --- !u!114 &114693339802494808
 MonoBehaviour:
   m_ObjectHideFlags: 1
