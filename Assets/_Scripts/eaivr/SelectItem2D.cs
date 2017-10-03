@@ -12,7 +12,7 @@ namespace eaivr
         public SelectItemData selectItemData;
         
         // consider moving to selectItem
-        void Start()
+        public virtual void Start()
         {
             //InsertItemData();
             gameManager = GameObject.FindGameObjectWithTag("GM").GetComponent<GameManager>();

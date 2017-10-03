@@ -1936,39 +1936,9 @@ LineRenderer:
       m_Curve:
       - serializedVersion: 2
         time: 0
-        value: 0
+        value: 0.22727203
         inSlope: 0
         outSlope: 0
-        tangentMode: 0
-      - serializedVersion: 2
-        time: 0.25193024
-        value: 0.6163558
-        inSlope: 2.9997528
-        outSlope: 2.9997528
-        tangentMode: 0
-      - serializedVersion: 2
-        time: 0.38053143
-        value: 0
-        inSlope: 2.8404593
-        outSlope: 2.8404593
-        tangentMode: 0
-      - serializedVersion: 2
-        time: 0.502697
-        value: 0.62711906
-        inSlope: 0
-        outSlope: 0
-        tangentMode: 0
-      - serializedVersion: 2
-        time: 0.6373463
-        value: 0.037768066
-        inSlope: -0.35732985
-        outSlope: -0.35732985
-        tangentMode: 0
-      - serializedVersion: 2
-        time: 0.7646463
-        value: 0.6003139
-        inSlope: 1.108902
-        outSlope: 1.108902
         tangentMode: 0
       - serializedVersion: 2
         time: 1
