@@ -18,7 +18,7 @@ namespace eaivr
 
         protected virtual void OnSelect()
         {
-            itemInParent.CheckSelectedAnswer();
+            itemInParent.CheckSelectedAnswers();
             GetComponentInChildren<Text>().text = "Next";
             button.onClick.RemoveAllListeners();
             button.onClick.AddListener(itemInParent.NextQuestion);

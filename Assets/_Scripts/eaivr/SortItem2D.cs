@@ -19,7 +19,7 @@ namespace eaivr
             gameManager = GameObject.FindGameObjectWithTag("GM").GetComponent<GameManager>();
         }
 
-        public override void CheckSelectedAnswer()
+        public override void CheckSelectedAnswers()
         {
             bool sorted = true;
 

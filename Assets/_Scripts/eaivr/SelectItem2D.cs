@@ -61,7 +61,7 @@ namespace eaivr
         }
 
         //consider moving to SelectItem
-        public override void CheckSelectedAnswer()
+        public override void CheckSelectedAnswers()
         {
             foreach (SelectAnswer2D selectedAnswer in selectAnswers2D)
             {

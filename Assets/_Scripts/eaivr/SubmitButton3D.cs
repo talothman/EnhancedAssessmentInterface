@@ -26,7 +26,7 @@ namespace eaivr
 
         protected void OnSelect(object sender, Control3DEventArgs e)
         {
-            itemInParent.CheckSelectedAnswer();
+            itemInParent.CheckSelectedAnswers();
             GetComponentInChildren<Text>().text = "Next";
             buttonEvents.OnPushed.RemoveListener(OnSelect);
             buttonEvents.OnPushed.AddListener(OnNext);

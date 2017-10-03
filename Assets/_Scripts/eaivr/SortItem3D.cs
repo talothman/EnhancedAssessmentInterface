@@ -11,7 +11,7 @@ namespace eaivr
         public SortItemData sortItemData;
         SortAnswer3D[] threeDSortAnswers;
 
-        void Start()
+        public virtual void Start()
         {
             if (sortAnswerGroup3D == null)
                 sortAnswerGroup3D = GetComponent<SortAnswerGroup3D>();
@@ -32,7 +32,7 @@ namespace eaivr
             }
         }
         
-        public override void CheckSelectedAnswer()
+        public override void CheckSelectedAnswers()
         {
             SortAnswer3D[] sortAnswers = sortAnswerGroup3D.threeDSortAnswers;
 

@@ -6,7 +6,7 @@ namespace eaivr
 {
     public class SelectItem3DTutorial : SelectItem3D
     {
-        public Transform lightTranform;
+        public Transform lightTransform;
         bool transitioning = false;
         Coroutine sunTransitionCoroutine;
         Dictionary<int, float> answerIndexToFloat;
@@ -23,7 +23,7 @@ namespace eaivr
                 {3, 187f}
             };
 
-            lightTranform = GameObject.FindGameObjectWithTag("light").transform;
+            lightTransform = GameObject.FindGameObjectWithTag("light").transform;
         }
 
         public override void SetSelectedAnswer(GameObject selectedObject)
@@ -58,21 +58,20 @@ namespace eaivr
         {
             transitioning = true;
 
-            Vector3 targetRotation = lightTranform.rotation.eulerAngles;
+            Vector3 targetRotation = lightTransform.rotation.eulerAngles;
             targetRotation.x = targetAngle;
             Quaternion targetRotationQuat = Quaternion.Euler(targetRotation);
 
-            if (Vector3.Distance(lightTranform.rotation.eulerAngles, targetRotation) > 0.01f)
+            if (Vector3.Distance(lightTransform.rotation.eulerAngles, targetRotation) > 0.01f)
             {
-                while (lightTranform.rotation != targetRotationQuat)
+                while (lightTransform.rotation != targetRotationQuat)
                 {
-                    lightTranform.transform.rotation = Quaternion.Slerp(lightTranform.transform.rotation, targetRotationQuat, Time.deltaTime);
+                    lightTransform.transform.rotation = Quaternion.Slerp(lightTransform.transform.rotation, targetRotationQuat, Time.deltaTime);
                     yield return null;
                 }
             }
             transitioning = false;
         }
-
     }
 }
 

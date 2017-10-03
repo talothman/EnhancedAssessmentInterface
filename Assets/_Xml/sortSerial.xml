@@ -1,6 +1,27 @@
 <?xml version="1.0" encoding="Windows-1252"?>
 <ArrayOfSortItemData xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
   <SortItemData>
+    <stem>Use your controller to sort what time of day it is beggining from now and forming a day cycle?</stem>
+    <sortAnswers>
+      <SortAnswerData>
+        <answerText>noon</answerText>
+        <correctOrder>0</correctOrder>
+      </SortAnswerData>
+      <SortAnswerData>
+        <answerText>dusk</answerText>
+        <correctOrder>1</correctOrder>
+      </SortAnswerData>
+      <SortAnswerData>
+        <answerText>night</answerText>
+        <correctOrder>2</correctOrder>
+      </SortAnswerData>
+      <SortAnswerData>
+        <answerText>dawn</answerText>
+        <correctOrder>3</correctOrder>
+      </SortAnswerData>
+    </sortAnswers>
+  </SortItemData>
+  <SortItemData>
     <stem>The following words sorted alphabetically, from left to right are?</stem>
     <sortAnswers>
       <SortAnswerData>

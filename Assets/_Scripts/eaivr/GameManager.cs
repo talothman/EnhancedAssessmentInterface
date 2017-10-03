@@ -73,8 +73,18 @@ namespace eaivr
 
         public void LoadSortTutorial()
         {
+            if (currentActiveItem != null)
+                Destroy(currentActiveItem, 0.5f);
+
+            StartCoroutine(PauseBeforeInstantiateSortTutorial());
+        }
+
+        IEnumerator PauseBeforeInstantiateSortTutorial()
+        {
+            yield return new WaitForSeconds(0.6f);
+            currentActiveItem = Instantiate(sortItemTutorialPrefab);
+            currentActiveItem.GetComponent<SortItem>().InsertItemData(sortItemData[currentSortItemIndex++]);
             loadedSortTutorial = true;
-            Next();
         }
 
         public void LoadSortQuestion()

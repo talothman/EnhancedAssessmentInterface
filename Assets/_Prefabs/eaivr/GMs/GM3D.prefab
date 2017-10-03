@@ -57,7 +57,8 @@ MonoBehaviour:
   sortItemData: []
   selectItemTutorialPrefab: {fileID: 1883743114063866, guid: 7b41be6e01a364b40bc48376ee6386a0,
     type: 2}
-  sortItemTutorialPrefab: {fileID: 0}
+  sortItemTutorialPrefab: {fileID: 1680228723226760, guid: a66f91f2a5a8b004cb14e6d5b566844f,
+    type: 2}
   selectItemPrefab: {fileID: 1962191054095990, guid: 7a5c224c9b712374595f8241e4998b39,
     type: 2}
   sortItemPrefab: {fileID: 1300350726571606, guid: abbab64abd905ce44ad312f1769be044,

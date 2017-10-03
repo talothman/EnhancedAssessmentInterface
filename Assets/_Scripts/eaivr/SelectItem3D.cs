@@ -74,7 +74,7 @@ namespace eaivr
             selectedAnswer.GetComponent<Renderer>().material = selectMaterial;
         }
 
-        public override void CheckSelectedAnswer()
+        public override void CheckSelectedAnswers()
         {
             foreach(SelectAnswer3D selectedAnswer in selectAnswers3D)
             {

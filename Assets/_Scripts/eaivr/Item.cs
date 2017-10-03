@@ -12,7 +12,7 @@ namespace eaivr
         protected bool answeredCorreclty;
         public GameObject submitGameObject;
         //public abstract void InsertItemData(ItemData itemData);
-        public abstract void CheckSelectedAnswer();
+        public abstract void CheckSelectedAnswers();
         public void NextQuestion()
         {
             gameManager.Next();
