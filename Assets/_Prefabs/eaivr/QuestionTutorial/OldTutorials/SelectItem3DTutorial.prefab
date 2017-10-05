@@ -2028,7 +2028,7 @@ MonoBehaviour:
     stem: 
     selectAnswers: []
   defaultMaterial: {fileID: 2100000, guid: 8d0776a7c7152a04c86a55bbc62989d6, type: 2}
-  lightTranform: {fileID: 0}
+  lightTransform: {fileID: 0}
 --- !u!114 &114663542526450848
 MonoBehaviour:
   m_ObjectHideFlags: 1

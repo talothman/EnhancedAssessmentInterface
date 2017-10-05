@@ -11,7 +11,6 @@ namespace eaivr
         public GameManager gameManager;
         protected bool answeredCorreclty;
         public GameObject submitGameObject;
-        //public abstract void InsertItemData(ItemData itemData);
         public abstract void CheckSelectedAnswers();
         public void NextQuestion()
         {

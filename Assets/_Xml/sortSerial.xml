@@ -1,22 +1,22 @@
 <?xml version="1.0" encoding="Windows-1252"?>
 <ArrayOfSortItemData xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
   <SortItemData>
-    <stem>Use your controller to sort what time of day it is beggining from now and forming a day cycle?</stem>
+    <stem>Use your controller to sort which terms most describe you from the left to the right.</stem>
     <sortAnswers>
       <SortAnswerData>
-        <answerText>noon</answerText>
+        <answerText>noob</answerText>
         <correctOrder>0</correctOrder>
       </SortAnswerData>
       <SortAnswerData>
-        <answerText>dusk</answerText>
+        <answerText>casual gamer</answerText>
         <correctOrder>1</correctOrder>
       </SortAnswerData>
       <SortAnswerData>
-        <answerText>night</answerText>
+        <answerText>core gamer</answerText>
         <correctOrder>2</correctOrder>
       </SortAnswerData>
       <SortAnswerData>
-        <answerText>dawn</answerText>
+        <answerText>hardcore gamer</answerText>
         <correctOrder>3</correctOrder>
       </SortAnswerData>
     </sortAnswers>

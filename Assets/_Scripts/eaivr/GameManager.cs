@@ -14,18 +14,18 @@ namespace eaivr
         public SelectItemData[] selectItemData;
         public SortItemData[] sortItemData;
 
-        public GameObject selectItemTutorialPrefab;
-        public GameObject sortItemTutorialPrefab;
+        public GameObject sliderQuestionPrefab;
+        //public GameObject sortItemTutorialPrefab;
 
         public GameObject selectItemPrefab;
         public GameObject sortItemPrefab;
 
-        public int currentSelectItemIndex = 0;
-        public int currentSortItemIndex = 0;
+        int currentIntroItemIndex = 0;
+        int currentSelectItemIndex = 0;
+        int currentSortItemIndex = 0;
         public GameObject currentActiveItem;
 
-        //Stage currentStage;
-        bool loadedSelectTutorial = false;
+        bool finishedAllIntroQuestions = false;
         bool loadedSortTutorial = false;
 
         private void Start()
@@ -49,11 +49,47 @@ namespace eaivr
             Next();
         }
 
-        public void LoadSelectTutorial()
+        public void Next()
         {
-            currentActiveItem = Instantiate(selectItemTutorialPrefab);
-            currentActiveItem.GetComponent<SelectItem>().InsertItemData(selectItemData[currentSelectItemIndex++]);
-            loadedSelectTutorial = true;
+            if (!finishedAllIntroQuestions)
+            {
+                LoadNextIntroQuestion();
+            }
+            else if (finishedAllIntroQuestions && currentSelectItemIndex < selectItemData.Length)
+            {
+                LoadSelectQuestion();
+            }
+            else if (currentSortItemIndex < sortItemData.Length)
+            {
+                LoadSortQuestion();
+            }
+            else
+                LoadOutro();
+        }
+
+        public void LoadNextIntroQuestion()
+        {
+            if (currentActiveItem != null)
+                Destroy(currentActiveItem);
+
+            if (currentIntroItemIndex == 0)
+            {
+                currentActiveItem = Instantiate(sliderQuestionPrefab);
+            }
+            else if (currentIntroItemIndex == 3)
+            {
+                currentActiveItem = Instantiate(sortItemPrefab);
+                currentActiveItem.GetComponent<SortItem>().InsertItemData(sortItemData[currentSortItemIndex++]);
+            }
+            else
+            {
+                currentActiveItem = Instantiate(selectItemPrefab);
+                currentActiveItem.GetComponent<SelectItem>().InsertItemData(selectItemData[currentSelectItemIndex++]);   
+            }
+
+            if(++currentIntroItemIndex == 4)
+                finishedAllIntroQuestions = true;
+            
         }
 
         public void LoadSelectQuestion()
@@ -69,22 +105,6 @@ namespace eaivr
             yield return new WaitForSeconds(0.6f);
             currentActiveItem = Instantiate(selectItemPrefab);
             currentActiveItem.GetComponent<SelectItem>().InsertItemData(selectItemData[currentSelectItemIndex++]);
-        }
-
-        public void LoadSortTutorial()
-        {
-            if (currentActiveItem != null)
-                Destroy(currentActiveItem, 0.5f);
-
-            StartCoroutine(PauseBeforeInstantiateSortTutorial());
-        }
-
-        IEnumerator PauseBeforeInstantiateSortTutorial()
-        {
-            yield return new WaitForSeconds(0.6f);
-            currentActiveItem = Instantiate(sortItemTutorialPrefab);
-            currentActiveItem.GetComponent<SortItem>().InsertItemData(sortItemData[currentSortItemIndex++]);
-            loadedSortTutorial = true;
         }
 
         public void LoadSortQuestion()
@@ -105,29 +125,6 @@ namespace eaivr
         public void LoadOutro()
         {
             Application.Quit();
-        }
-
-        public void Next()
-        {
-            if (!loadedSelectTutorial)
-            {
-                LoadSelectTutorial();
-            }
-            else if (loadedSelectTutorial && currentSelectItemIndex < selectItemData.Length)
-            {
-                // wait until shift to sun is done
-                LoadSelectQuestion();
-            }
-            else if (!loadedSortTutorial)
-            {
-                LoadSortTutorial();
-            }
-            else if (loadedSortTutorial && currentSortItemIndex < sortItemData.Length)
-            {
-                LoadSortQuestion();
-            }
-            else
-                LoadOutro();
         }
     }    
 }

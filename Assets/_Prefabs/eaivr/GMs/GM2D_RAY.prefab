@@ -26,7 +26,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &4307628293780106
 Transform:
   m_ObjectHideFlags: 1
@@ -55,13 +55,13 @@ MonoBehaviour:
   pathToSortBank: 
   selectItemData: []
   sortItemData: []
-  selectItemTutorialPrefab: {fileID: 1140624701058136, guid: 29f28c6620a466d46b5b97d4f75644ba,
+  sliderQuestionPrefab: {fileID: 1558412925680048, guid: 291b835957f29a94e9a5ddc4eb9f0eab,
     type: 2}
-  sortItemTutorialPrefab: {fileID: 0}
   selectItemPrefab: {fileID: 1754103724047376, guid: 2c6f72d9a8ee5744d871f99c7728a74c,
     type: 2}
   sortItemPrefab: {fileID: 1179190749327814, guid: 55a2623628356f04ea6de9699d335098,
     type: 2}
+  currentIntroQuestionIndex: 0
   currentSelectItemIndex: 0
   currentSortItemIndex: 0
   currentActiveItem: {fileID: 0}

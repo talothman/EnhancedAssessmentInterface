@@ -1,22 +1,43 @@
 <?xml version="1.0" encoding="Windows-1252"?>
 <ArrayOfSelectItemData xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
   <SelectItemData>
-    <stem>Use your controller to select what time of day it is. This will help you navigate our interface.</stem>
+    <stem>What gender do you identify with?</stem>
     <selectAnswers>
       <SelectAnswerData>
-        <answerText>Noon</answerText>
+        <answerText>Female</answerText>
         <isKey>true</isKey>
       </SelectAnswerData>
       <SelectAnswerData>
-        <answerText>Dusk</answerText>
+        <answerText>Male</answerText>
         <isKey>true</isKey>
       </SelectAnswerData>
       <SelectAnswerData>
-        <answerText>Night</answerText>
+        <answerText>Transgender</answerText>
         <isKey>true</isKey>
       </SelectAnswerData>
       <SelectAnswerData>
-        <answerText>Dawn</answerText>
+        <answerText>Nonbinary</answerText>
+        <isKey>true</isKey>
+      </SelectAnswerData>
+    </selectAnswers>
+  </SelectItemData>
+  <SelectItemData>
+    <stem>Which level describes your current educational status?</stem>
+    <selectAnswers>
+      <SelectAnswerData>
+        <answerText>Undergraduate Student</answerText>
+        <isKey>true</isKey>
+      </SelectAnswerData>
+      <SelectAnswerData>
+        <answerText>Graduate Student</answerText>
+        <isKey>true</isKey>
+      </SelectAnswerData>
+      <SelectAnswerData>
+        <answerText>Professor</answerText>
+        <isKey>true</isKey>
+      </SelectAnswerData>
+      <SelectAnswerData>
+        <answerText>Graduated/Working</answerText>
         <isKey>true</isKey>
       </SelectAnswerData>
     </selectAnswers>
