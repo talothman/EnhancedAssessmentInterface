@@ -28,6 +28,8 @@ namespace eaivr
         bool finishedAllIntroQuestions = false;
         bool loadedSortTutorial = false;
 
+        delegate void DelayedFunction();
+
         private void Start()
         {
             LoadQuestionsFromDisk();
@@ -67,44 +69,51 @@ namespace eaivr
                 LoadOutro();
         }
 
+        IEnumerator DelayedFunctionRunner(DelayedFunction delayedFunction)
+        {
+            yield return new WaitForSeconds(0.6f);
+            delayedFunction.Invoke();
+        }
+
         public void LoadNextIntroQuestion()
         {
             if (currentActiveItem != null)
-                Destroy(currentActiveItem);
+                Destroy(currentActiveItem, 0.5f);
 
             if (currentIntroItemIndex == 0)
             {
-                currentActiveItem = Instantiate(sliderQuestionPrefab);
+                StartCoroutine(DelayedFunctionRunner(() => {
+                    currentActiveItem = Instantiate(sliderQuestionPrefab);
+                }));
             }
             else if (currentIntroItemIndex == 3)
             {
-                currentActiveItem = Instantiate(sortItemPrefab);
-                currentActiveItem.GetComponent<SortItem>().InsertItemData(sortItemData[currentSortItemIndex++]);
+                StartCoroutine(DelayedFunctionRunner(() => {
+                    currentActiveItem = Instantiate(sortItemPrefab);
+                    currentActiveItem.GetComponent<SortItem>().InsertItemData(sortItemData[currentSortItemIndex++]);
+                })); 
             }
             else
             {
-                currentActiveItem = Instantiate(selectItemPrefab);
-                currentActiveItem.GetComponent<SelectItem>().InsertItemData(selectItemData[currentSelectItemIndex++]);   
+                StartCoroutine(DelayedFunctionRunner(() => {
+                    currentActiveItem = Instantiate(selectItemPrefab);
+                    currentActiveItem.GetComponent<SelectItem>().InsertItemData(selectItemData[currentSelectItemIndex++]);
+                }));
             }
 
             if(++currentIntroItemIndex == 4)
-                finishedAllIntroQuestions = true;
-            
+                finishedAllIntroQuestions = true;            
         }
 
         public void LoadSelectQuestion()
         {
             if (currentActiveItem != null)
-                Destroy(currentActiveItem);
+                Destroy(currentActiveItem, 0.5f);
 
-            StartCoroutine(PauseBeforeInstantiateSelect());
-        }
-
-        IEnumerator PauseBeforeInstantiateSelect()
-        {
-            yield return new WaitForSeconds(0.6f);
-            currentActiveItem = Instantiate(selectItemPrefab);
-            currentActiveItem.GetComponent<SelectItem>().InsertItemData(selectItemData[currentSelectItemIndex++]);
+            StartCoroutine(DelayedFunctionRunner(() => {
+                currentActiveItem = Instantiate(selectItemPrefab);
+                currentActiveItem.GetComponent<SelectItem>().InsertItemData(selectItemData[currentSelectItemIndex++]);
+            }));
         }
 
         public void LoadSortQuestion()
@@ -112,14 +121,10 @@ namespace eaivr
             if (currentActiveItem != null)
                 Destroy(currentActiveItem, 0.5f);
 
-            StartCoroutine(PauseBeforeInstantiateSort());
-        }
-
-        IEnumerator PauseBeforeInstantiateSort()
-        {
-            yield return new WaitForSeconds(0.6f);
-            currentActiveItem = Instantiate(sortItemPrefab);
-            currentActiveItem.GetComponent<SortItem>().InsertItemData(sortItemData[currentSortItemIndex++]);
+            StartCoroutine(DelayedFunctionRunner(() => {
+                currentActiveItem = Instantiate(sortItemPrefab);
+                currentActiveItem.GetComponent<SortItem>().InsertItemData(sortItemData[currentSortItemIndex++]);
+            }));
         }
 
         public void LoadOutro()

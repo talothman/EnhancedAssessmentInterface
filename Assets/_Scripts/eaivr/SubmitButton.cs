@@ -7,6 +7,7 @@ namespace eaivr
     public class SubmitButton : MonoBehaviour
     {
         protected Item itemInParent;
+        protected bool oneButtonSubmit = true;
     }
 }
 

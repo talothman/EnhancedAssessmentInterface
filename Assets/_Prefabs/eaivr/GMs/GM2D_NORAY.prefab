@@ -55,13 +55,10 @@ MonoBehaviour:
   pathToSortBank: 
   selectItemData: []
   sortItemData: []
-  selectItemTutorialPrefab: {fileID: 1541294411593076, guid: d4166af68042cdf4dad00ccd59d780e6,
+  sliderQuestionPrefab: {fileID: 1589429147651338, guid: 7827edd7a6b235445a592228295dab03,
     type: 2}
-  sortItemTutorialPrefab: {fileID: 0}
   selectItemPrefab: {fileID: 1225936018832272, guid: 47aff79d839edb848befd3398404d0a5,
     type: 2}
   sortItemPrefab: {fileID: 1670918295910800, guid: 1a3895eabad696146b700294bc5c6d35,
     type: 2}
-  currentSelectItemIndex: 0
-  currentSortItemIndex: 0
   currentActiveItem: {fileID: 0}

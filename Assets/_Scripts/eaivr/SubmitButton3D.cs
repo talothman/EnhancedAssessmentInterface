@@ -10,7 +10,7 @@ namespace eaivr
     public class SubmitButton3D : SubmitButton
     {
         private VRTK_Button_UnityEvents buttonEvents;
-        // Use this for initialization
+        
         void Start()
         {
             itemInParent = transform.GetComponentInParent<Item>();
@@ -21,7 +21,10 @@ namespace eaivr
                 buttonEvents = gameObject.AddComponent<VRTK_Button_UnityEvents>();
             }
 
-            buttonEvents.OnPushed.AddListener(OnSelect);
+            if (oneButtonSubmit)
+                buttonEvents.OnPushed.AddListener(OnNext);
+            else
+                buttonEvents.OnPushed.AddListener(OnSelect);
         }
 
         protected void OnSelect(object sender, Control3DEventArgs e)
@@ -36,9 +39,7 @@ namespace eaivr
         {
             //buttonEvents.OnPushed.RemoveListener(OnNext);
             itemInParent.NextQuestion();
-
         }
-        
     }
 }
 

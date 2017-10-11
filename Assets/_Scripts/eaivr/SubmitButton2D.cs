@@ -8,12 +8,16 @@ namespace eaivr
     public class SubmitButton2D : SubmitButton
     {
         private Button button;
-        // Use this for initialization
+        
         void Start()
         {
             itemInParent = transform.GetComponentInParent<Item>();
             button = GetComponent<Button>();
-            button.onClick.AddListener(OnSelect);
+
+            if (oneButtonSubmit)
+                button.onClick.AddListener(itemInParent.NextQuestion);
+            else
+                button.onClick.AddListener(OnSelect);
         }
 
         protected virtual void OnSelect()
