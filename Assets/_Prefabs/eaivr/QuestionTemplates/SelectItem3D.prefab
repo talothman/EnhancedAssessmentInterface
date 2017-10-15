@@ -753,7 +753,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!1 &1962191054095990
 GameObject:
   m_ObjectHideFlags: 0
@@ -2716,6 +2716,13 @@ MonoBehaviour:
   canvasText: {fileID: 114244130428137736}
   gameManager: {fileID: 0}
   submitGameObject: {fileID: 1958296586311076}
+  firstInteraction: 0
+  answeredCorreclty: 0
+  questionID: 
+  timeStart: 0
+  timeToFirstInteraction: 0
+  timeEnded: 0
+  numOfInteractions: 0
   selectColor: {r: 0.9558824, g: 0.49083492, b: 0.1335424, a: 1}
   selectAnswers3D:
   - {fileID: 114441116217673570}

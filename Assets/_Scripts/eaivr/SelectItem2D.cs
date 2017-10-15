@@ -23,6 +23,7 @@ namespace eaivr
             selectItemData = selItemData;
             canvasText.text = selectItemData.stem;
             questionID = selectItemData.questionID;
+            timeStart = Time.time;
 
             for (int i = 0; i < selectAnswers2D.Length; i++)
             {
@@ -82,6 +83,26 @@ namespace eaivr
                     //NextQuestion();
                 }
             }
+        }
+
+        public override void NextQuestion()
+        {
+            foreach (SelectAnswer2D selectedAnswer in selectAnswers2D)
+            {
+                if (selectedAnswer.isSelected)
+                {
+                    if (selectedAnswer.isKey)
+                    {                        
+                        answeredCorreclty = true;
+                    }
+                    else
+                    {                        
+                        answeredCorreclty = false;
+                    }
+                }
+            }
+
+            base.NextQuestion();
         }
 
         public override string GetSelectedAnswer()

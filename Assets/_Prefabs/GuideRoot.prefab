@@ -680,7 +680,7 @@ Transform:
   m_GameObject: {fileID: 1252130728805428}
   m_LocalRotation: {x: -0, y: 0.38268343, z: -0, w: 0.92387956}
   m_LocalPosition: {x: 4.2978, y: -1.285, z: 3}
-  m_LocalScale: {x: 1.4320667, y: 1.4320667, z: 1.4320669}
+  m_LocalScale: {x: 2, y: 2, z: 2}
   m_Children:
   - {fileID: 4969120315881512}
   - {fileID: 4808529457109142}
@@ -721,7 +721,7 @@ Transform:
   m_GameObject: {fileID: 1333830513558426}
   m_LocalRotation: {x: -0, y: -0.38268343, z: -0, w: 0.92387956}
   m_LocalPosition: {x: -4.2946, y: -1.285, z: 3}
-  m_LocalScale: {x: 1.4320662, y: 1.4320667, z: 1.4320667}
+  m_LocalScale: {x: 2, y: 2, z: 2}
   m_Children:
   - {fileID: 4219615381490204}
   - {fileID: 4548640451192490}
@@ -1594,8 +1594,10 @@ MonoBehaviour:
   hayehAnimator: {fileID: 95383226208970646}
   textBoxAnimator: {fileID: 95134801742097070}
   textBoxText: {fileID: 114580629666391316}
-  leftHand: {fileID: 0}
-  rightHand: {fileID: 0}
+  leftHandModel: {fileID: 0}
+  rightHandModel: {fileID: 0}
+  leftHandScript: {fileID: 0}
+  rightHandScript: {fileID: 0}
   treeLeft: {fileID: 1333830513558426}
   treeRight: {fileID: 1252130728805428}
   gameManager: {fileID: 0}

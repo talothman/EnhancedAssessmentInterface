@@ -63,6 +63,32 @@ namespace eaivr
             }
         }
 
+        public override void NextQuestion()
+        {
+            SortAnswer3D[] sortAnswers = sortAnswerGroup3D.threeDSortAnswers;
+
+            bool sorted = true;
+
+            for (int i = 0; i < sortAnswers.Length; i++)
+            {
+                if (sortAnswers[i].correctOrder != sortAnswers[i].currentOrder)
+                {                    
+                    sorted = false;
+                }                
+            }
+
+            if (sorted)
+            {
+                answeredCorreclty = true;
+            }
+            else
+            {
+                answeredCorreclty = false;
+            }
+
+            base.NextQuestion();
+        }
+
         public override string[] GetOrderedItems()
         {
             SortAnswer3D[] sortAnswers = sortAnswerGroup3D.threeDSortAnswers;

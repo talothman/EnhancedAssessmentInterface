@@ -155,7 +155,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!1 &1180390802373302
 GameObject:
   m_ObjectHideFlags: 1
@@ -2495,6 +2495,13 @@ MonoBehaviour:
   canvasText: {fileID: 114657676808061662}
   gameManager: {fileID: 0}
   submitGameObject: {fileID: 1134523967139174}
+  firstInteraction: 0
+  answeredCorreclty: 0
+  questionID: 
+  timeStart: 0
+  timeToFirstInteraction: 0
+  timeEnded: 0
+  numOfInteractions: 0
   sortAnswerGroup3D: {fileID: 114990659602864612}
   sortItemData:
     questionID: 0

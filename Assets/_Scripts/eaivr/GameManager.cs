@@ -106,7 +106,12 @@ namespace eaivr
                         break;
                     case 4:
                         userInfo.knowHow = currentActiveItem.GetComponent<SortItem>().GetOrderedItems();
-                        stage = Stage.SELECT;
+
+                        if (masterDriver.experinmentType == MasterDriver.ExperinmentType.RAY)
+                            stage = Stage.SELECT;
+                        else
+                            stage = Stage.SORT;
+
                         masterDriver.WriteBasicInfo(userInfo);
                         Next();
                         return;
@@ -149,7 +154,11 @@ namespace eaivr
 
             if (currentSelectItemIndex >= selectItemData.Length)
             {
-                stage = Stage.SORT;
+                if(masterDriver.experinmentType == MasterDriver.ExperinmentType.RAY)
+                    stage = Stage.SORT;
+                else
+                    stage = Stage.OUTRO;
+
                 Next();
                 return;
             }
@@ -165,12 +174,16 @@ namespace eaivr
 
         public void LoadSortQuestion()
         {
-            if (currentActiveItem.GetComponent<SortItem>() != null)
+            if (currentActiveItem.GetComponent<SortItem>() != null && currentActiveItem.GetComponent<SortItem>().questionID != "tut3")
                 masterDriver.WriteItemResponse(currentActiveItem.GetComponent<Item>());
 
             if (currentSortItemIndex >= sortItemData.Length)
             {
-                stage = Stage.OUTRO;
+                if (masterDriver.experinmentType == MasterDriver.ExperinmentType.RAY)
+                    stage = Stage.OUTRO;
+                else
+                    stage = Stage.SELECT;
+
                 Next();
                 return;
             }

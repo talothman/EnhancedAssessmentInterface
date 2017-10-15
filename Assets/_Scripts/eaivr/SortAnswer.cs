@@ -10,8 +10,15 @@ namespace eaivr{
         public bool grabbed;
         public SortAnswerGroup sortAnswerGroup;
         public SortItem sortItem;
+        
         public void IncrementInteraction()
         {
+            if (!sortItem.firstInteraction)
+            {
+                sortItem.firstInteraction = true;
+                sortItem.timeToFirstInteraction = Time.time;
+            }
+
             ++sortItem.numOfInteractions;
         }
     }

@@ -53,9 +53,11 @@ namespace eaivr
                 }
                 OnDraggableItemDropped(SetEventPayload(validDropZone));
                 UpdateSortState();
+                
             }
 
             UpdateSortState();
+            
             validDropZone = null;
             startParent = null;
             startCanvas = null;
@@ -71,9 +73,12 @@ namespace eaivr
         public override void OnBeginDrag(PointerEventData eventData)
         {
             base.OnBeginDrag(eventData);
+
             if (!GetComponent<SortAnswer2D>().sortItem.submitGameObject.activeInHierarchy)
                 GetComponent<SortAnswer2D>().sortItem.submitGameObject.SetActive(true);
+
             GetComponent<SortAnswer2D>().grabbed = true;
+            GetComponent<SortAnswer2D>().IncrementInteraction();
         }
 
     }

@@ -15,21 +15,19 @@ namespace eaivr
             sortAnswerGroup = GetComponentInParent<SortAnswerGroup2D>();
 
             uiDraggable = GetComponent<Custom_UIDraggableItem>();
-            uiDraggable.DraggableItemDropped += IncrementInteractionOnDrop; ;
+            //uiDraggable.DraggableItemDropped += IncrementInteractionOnDrop;
         }
 
-        private void IncrementInteractionOnDrop(object sender, VRTK.UIDraggableItemEventArgs e)
-        {
-            IncrementInteraction();
-        }
+        //private void IncrementInteractionOnDrop(object sender, VRTK.UIDraggableItemEventArgs e)
+        //{
+        //    IncrementInteraction();
+        //}
 
         private void Update()
         {
             if(grabbed)
                 (sortAnswerGroup as SortAnswerGroup2D).UpdateSortState();
-        }
-
-        
+        }  
     }
 }
 

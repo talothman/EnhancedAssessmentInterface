@@ -11,6 +11,12 @@ namespace eaivr
 
         public void IncrementInteraction()
         {
+            if (!selectItemParent.firstInteraction)
+            {
+                selectItemParent.firstInteraction = true;
+                selectItemParent.timeToFirstInteraction = Time.time;
+            }
+
             ++selectItemParent.numOfInteractions;
         }
     }

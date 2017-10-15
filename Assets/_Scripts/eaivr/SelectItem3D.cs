@@ -97,6 +97,27 @@ namespace eaivr
             }
         }
 
+        public override void NextQuestion()
+        {
+            foreach (SelectAnswer3D selectedAnswer in selectAnswers3D)
+            {
+                if (selectedAnswer.isSelected)
+                {
+                    if (selectedAnswer.isKey)
+                    {                        
+                        answeredCorreclty = true;
+                    }
+                    else
+                    {
+                        answeredCorreclty = false;
+                    }
+                }
+                // deactivate buttons
+            }
+
+            base.NextQuestion();
+        }
+
         public override string GetSelectedAnswer()
         {
             string selectedText = "";

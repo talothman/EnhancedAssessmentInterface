@@ -8,8 +8,8 @@ namespace eaivr
     public class MasterDriver : MonoBehaviour
     {
 
-        enum ExperinmentType { RAY, HAND };
-        ExperinmentType experinmentType;
+        public enum ExperinmentType { RAY, HAND };
+        public ExperinmentType experinmentType;
 
         string pathToDataDirectory;
         string dataFileName;
@@ -88,13 +88,16 @@ namespace eaivr
         {
             dataWriter.WriteLine("age, gender, education, previous_comp_exp");
             dataWriter.WriteLine(userInfo.age +"," + userInfo.gender + "," + userInfo.educationLevel + "," + userInfo.knowHow[0]);
-            dataWriter.WriteLine("qID, timeTaken, numInteractions, correct");
+            dataWriter.WriteLine("qID, time_taken, time_to_first_interaction, num_of_interactions, answered_correctly");
             //CloseDataFile();
         }
 
         public void WriteItemResponse(Item item)
         {
-            dataWriter.WriteLine(item.questionID + "," + (item.timeEnded - item.timeStart) + "," + item.numOfInteractions
+            dataWriter.WriteLine(item.questionID + 
+                "," + (item.timeEnded - item.timeStart) + 
+                "," + (item.timeToFirstInteraction - item.timeStart) + 
+                "," + item.numOfInteractions
                 + "," + item.answeredCorreclty);
         }
     }

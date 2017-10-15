@@ -46,6 +46,30 @@ namespace eaivr
             }
         }
 
+        public override void NextQuestion()
+        {
+            bool sorted = true;
+
+            for (int i = 0; i < sortAnswers.Length; i++)
+            {
+                if (sortAnswers[i].correctOrder != sortAnswers[i].currentOrder)
+                {
+                    sorted = false;
+                }                
+            }
+
+            if (sorted)
+            {
+                answeredCorreclty = true;
+            }
+            else
+            {
+                answeredCorreclty = false;
+            }
+
+            base.NextQuestion();
+        }
+
         public override void InsertItemData(SortItemData newSortItemData)
         {
             sortAnswers = sortAnswerGroup2D.twoDSortAnswers;

@@ -17,6 +17,8 @@ namespace eaivr
             gameManager.Next();
         }
 
+        public bool firstInteraction = false;
+
         public bool answeredCorreclty;
         public string questionID;
         public float timeStart;
