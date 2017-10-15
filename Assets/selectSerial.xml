@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="Windows-1252"?>
+<ArrayOfSelectItemData xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <SelectItemData>
+    <questionID>0</questionID>
+    <stem>SelectItem 1</stem>
+    <selectAnswers>
+      <SelectAnswerData>
+        <answerText>3213</answerText>
+        <isKey>false</isKey>
+      </SelectAnswerData>
+      <SelectAnswerData>
+        <answerText>423</answerText>
+        <isKey>false</isKey>
+      </SelectAnswerData>
+    </selectAnswers>
+  </SelectItemData>
+  <SelectItemData>
+    <questionID>0</questionID>
+    <stem>SelectItem 2</stem>
+    <selectAnswers>
+      <SelectAnswerData>
+        <answerText>234234</answerText>
+        <isKey>false</isKey>
+      </SelectAnswerData>
+      <SelectAnswerData>
+        <answerText>234234</answerText>
+        <isKey>false</isKey>
+      </SelectAnswerData>
+    </selectAnswers>
+  </SelectItemData>
+</ArrayOfSelectItemData>

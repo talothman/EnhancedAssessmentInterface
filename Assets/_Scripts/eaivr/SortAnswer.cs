@@ -10,6 +10,10 @@ namespace eaivr{
         public bool grabbed;
         public SortAnswerGroup sortAnswerGroup;
         public SortItem sortItem;
+        public void IncrementInteraction()
+        {
+            ++sortItem.numOfInteractions;
+        }
     }
 }
 

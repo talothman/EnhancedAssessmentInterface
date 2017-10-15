@@ -22,6 +22,7 @@ namespace eaivr
         {
             selectItemData = selItemData;
             canvasText.text = selectItemData.stem;
+            questionID = selectItemData.questionID;
 
             for (int i = 0; i < selectAnswers2D.Length; i++)
             {
@@ -81,6 +82,22 @@ namespace eaivr
                     //NextQuestion();
                 }
             }
+        }
+
+        public override string GetSelectedAnswer()
+        {
+            string selectedText = "";
+
+            foreach (SelectAnswer2D selectedAnswer in selectAnswers2D)
+            {
+                if (selectedAnswer.isSelected)
+                {
+                    selectedText = selectedAnswer.GetComponentInChildren<Text>().text;
+                    break;
+                }
+            }
+
+            return selectedText;
         }
     }
 }

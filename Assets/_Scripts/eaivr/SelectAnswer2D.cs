@@ -18,6 +18,7 @@ namespace eaivr{
         protected virtual void OnSelect()
         {
             selectItemParent.SetSelectedAnswer(gameObject);
+            IncrementInteraction();
         }
     }
 }

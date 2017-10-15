@@ -4,8 +4,16 @@ using UnityEngine;
 
 namespace eaivr
 {
-    enum Stage { SELECT, SORT }
+    public struct UserInfo
+    {
+        public string age;
+        public string gender;
+        public string educationLevel;
+        public string[] knowHow;
+    }
 
+    enum Stage { TUTORIAL, SELECT, SORT, OUTRO }
+    
     public class GameManager : MonoBehaviour
     {
         public string pathToSelectBank;
@@ -26,12 +34,18 @@ namespace eaivr
         public GameObject currentActiveItem;
 
         bool finishedAllIntroQuestions = false;
-        bool loadedSortTutorial = false;
+
+        public UserInfo userInfo;
+        private MasterDriver masterDriver;
+
+        private Stage stage;
 
         delegate void DelayedFunction();
 
         private void Start()
         {
+            masterDriver = GameObject.FindGameObjectWithTag("MD").GetComponent<MasterDriver>();
+            stage = Stage.TUTORIAL;
             LoadQuestionsFromDisk();
         }
 
@@ -53,15 +67,15 @@ namespace eaivr
 
         public void Next()
         {
-            if (!finishedAllIntroQuestions)
+            if (stage == Stage.TUTORIAL)
             {
                 LoadNextIntroQuestion();
             }
-            else if (finishedAllIntroQuestions && currentSelectItemIndex < selectItemData.Length)
+            else if (stage == Stage.SELECT)
             {
                 LoadSelectQuestion();
             }
-            else if (currentSortItemIndex < sortItemData.Length)
+            else if (stage == Stage.SORT)
             {
                 LoadSortQuestion();
             }
@@ -78,8 +92,32 @@ namespace eaivr
         public void LoadNextIntroQuestion()
         {
             if (currentActiveItem != null)
-                Destroy(currentActiveItem, 0.5f);
+            {
+                switch (currentIntroItemIndex)
+                {
+                    case 1:
+                        userInfo.age = currentActiveItem.GetComponent<SliderItem>().GetSliderValue();
+                        break;
+                    case 2:
+                        userInfo.gender = currentActiveItem.GetComponent<SelectItem>().GetSelectedAnswer();
+                        break;
+                    case 3:
+                        userInfo.educationLevel = currentActiveItem.GetComponent<SelectItem>().GetSelectedAnswer();
+                        break;
+                    case 4:
+                        userInfo.knowHow = currentActiveItem.GetComponent<SortItem>().GetOrderedItems();
+                        stage = Stage.SELECT;
+                        masterDriver.WriteBasicInfo(userInfo);
+                        Next();
+                        return;
+                    default:
+                        Debug.LogError("tutorial switch case error");
+                        break;
+                }
 
+                Destroy(currentActiveItem, 0.5f);
+            }
+                
             if (currentIntroItemIndex == 0)
             {
                 StartCoroutine(DelayedFunctionRunner(() => {
@@ -101,12 +139,21 @@ namespace eaivr
                 }));
             }
 
-            if(++currentIntroItemIndex == 4)
-                finishedAllIntroQuestions = true;            
+            ++currentIntroItemIndex;               
         }
 
         public void LoadSelectQuestion()
         {
+            if (currentActiveItem.GetComponent<SelectItem>() != null)
+                masterDriver.WriteItemResponse(currentActiveItem.GetComponent<Item>());
+
+            if (currentSelectItemIndex >= selectItemData.Length)
+            {
+                stage = Stage.SORT;
+                Next();
+                return;
+            }
+            
             if (currentActiveItem != null)
                 Destroy(currentActiveItem, 0.5f);
 
@@ -118,6 +165,16 @@ namespace eaivr
 
         public void LoadSortQuestion()
         {
+            if (currentActiveItem.GetComponent<SortItem>() != null)
+                masterDriver.WriteItemResponse(currentActiveItem.GetComponent<Item>());
+
+            if (currentSortItemIndex >= sortItemData.Length)
+            {
+                stage = Stage.OUTRO;
+                Next();
+                return;
+            }
+
             if (currentActiveItem != null)
                 Destroy(currentActiveItem, 0.5f);
 
@@ -129,6 +186,8 @@ namespace eaivr
 
         public void LoadOutro()
         {
+            masterDriver.CloseDataFile();
+            Destroy(currentActiveItem, 0.5f);
             Application.Quit();
         }
     }    

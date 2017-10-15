@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="Windows-1252"?>
 <ArrayOfSortItemData xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
   <SortItemData>
+    <questionID>tut3</questionID>
     <stem>Use your controller to sort which terms most describe you from the left to the right.</stem>
     <sortAnswers>
       <SortAnswerData>
@@ -22,6 +23,7 @@
     </sortAnswers>
   </SortItemData>
   <SortItemData>
+    <questionID>sor0</questionID>
     <stem>The following words sorted alphabetically, from left to right are?</stem>
     <sortAnswers>
       <SortAnswerData>
@@ -43,6 +45,7 @@
     </sortAnswers>
   </SortItemData>
   <SortItemData>
+    <questionID>sor1</questionID>
     <stem>The following words sorted alphabetically, from left to right are?</stem>
     <sortAnswers>
       <SortAnswerData>

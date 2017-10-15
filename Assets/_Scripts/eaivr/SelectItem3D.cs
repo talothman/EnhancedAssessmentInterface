@@ -28,6 +28,8 @@ namespace eaivr
         {
             selectItemData = selItemData;
             canvasText.text = selectItemData.stem;
+            questionID = selectItemData.questionID;
+            timeStart = Time.time;
 
             for (int i = 0; i < selectAnswers3D.Length; i++)
             {
@@ -93,6 +95,21 @@ namespace eaivr
                 }
              // deactivate buttons
             }
+        }
+
+        public override string GetSelectedAnswer()
+        {
+            string selectedText = "";
+
+            foreach (SelectAnswer3D selectedAnswer in selectAnswers3D)
+            {
+                if (selectedAnswer.isSelected)
+                {
+                    selectedText = selectedAnswer.GetComponentInChildren<Text>().text;
+                }
+            }
+
+            return selectedText;
         }
     }
 }

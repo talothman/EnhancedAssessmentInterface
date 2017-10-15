@@ -51,12 +51,26 @@ namespace eaivr
             sortAnswers = sortAnswerGroup2D.twoDSortAnswers;
             sortItemData = newSortItemData;
             canvasText.text = sortItemData.stem;
+            questionID = sortItemData.questionID;
+            timeStart = Time.time;
 
             for (int i = 0; i < sortAnswers.Length; i++)
             {
                 sortAnswers[i].GetComponentInChildren<Text>().text = sortItemData.sortAnswers[i].answerText;
                 sortAnswers[i].correctOrder = sortItemData.sortAnswers[i].correctOrder;
             }
+        }
+
+        public override string[] GetOrderedItems()
+        {
+            string[] sortedAnswers = new string[sortAnswers.Length];
+
+            for (int i = 0; i < sortAnswers.Length; i++)
+            {
+                sortedAnswers[i] = sortAnswers[i].GetComponentInChildren<Text>().text;
+            }
+
+            return sortedAnswers;
         }
     }
 }

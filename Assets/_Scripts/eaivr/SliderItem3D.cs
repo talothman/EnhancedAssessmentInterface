@@ -32,5 +32,15 @@ namespace eaivr
         {
             gameManager.Next();
         }
+
+        public override void NextQuestion()
+        {
+            base.NextQuestion();
+        }
+
+        public override string GetSliderValue()
+        {
+            return ageText.text;
+        }
     }
 }

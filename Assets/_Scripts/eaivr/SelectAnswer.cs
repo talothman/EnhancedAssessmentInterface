@@ -8,6 +8,11 @@ namespace eaivr
 
         public bool isKey, isSelected;
         protected SelectItem selectItemParent;
+
+        public void IncrementInteraction()
+        {
+            ++selectItemParent.numOfInteractions;
+        }
     }
 }
 

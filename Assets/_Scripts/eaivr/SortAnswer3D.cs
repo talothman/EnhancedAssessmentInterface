@@ -24,6 +24,8 @@ namespace eaivr
         {
             grabbed = true;
 
+            IncrementInteraction();
+
             if (!sortItem.submitGameObject.activeInHierarchy)
                 sortItem.submitGameObject.SetActive(true);
         }

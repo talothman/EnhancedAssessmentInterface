@@ -24,6 +24,8 @@ namespace eaivr
             threeDSortAnswers = sortAnswerGroup3D.threeDSortAnswers;
             sortItemData = sorItemData;
             canvasText.text = sortItemData.stem;
+            questionID = sortItemData.questionID;
+            timeStart = Time.time;
 
             for (int i = 0; i < threeDSortAnswers.Length; i++)
             {
@@ -59,6 +61,19 @@ namespace eaivr
             {
                 answeredCorreclty = false;
             }
+        }
+
+        public override string[] GetOrderedItems()
+        {
+            SortAnswer3D[] sortAnswers = sortAnswerGroup3D.threeDSortAnswers;
+            string[] sortedAnswersText = new string[sortAnswers.Length];
+
+            for (int i = 0; i < sortAnswers.Length; i++)
+            {
+                sortedAnswersText[i] = sortAnswers[i].GetComponentInChildren<Text>().text;
+            }
+
+            return sortedAnswersText;
         }
     }
 }

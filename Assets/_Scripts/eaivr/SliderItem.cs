@@ -7,7 +7,7 @@ namespace eaivr
 {
     public abstract class SliderItem : Item
     {
-        public Text ageText;        
+        public Text ageText;
+        public abstract string GetSliderValue();
     }
 }
-

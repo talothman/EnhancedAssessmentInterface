@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="Windows-1252"?>
+<ArrayOfSortItemData xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <SortItemData>
+    <questionID>0</questionID>
+    <stem>This is the stem part of the question</stem>
+    <sortAnswers>
+      <SortAnswerData>
+        <answerText>Answer 1</answerText>
+        <correctOrder>0</correctOrder>
+      </SortAnswerData>
+      <SortAnswerData>
+        <answerText>Answer 2</answerText>
+        <correctOrder>0</correctOrder>
+      </SortAnswerData>
+      <SortAnswerData>
+        <answerText>Answer 3</answerText>
+        <correctOrder>0</correctOrder>
+      </SortAnswerData>
+      <SortAnswerData>
+        <answerText>Answer 4</answerText>
+        <correctOrder>0</correctOrder>
+      </SortAnswerData>
+    </sortAnswers>
+  </SortItemData>
+  <SortItemData>
+    <questionID>0</questionID>
+    <stem>Sort Item 2</stem>
+    <sortAnswers>
+      <SortAnswerData>
+        <answerText>Answer 1</answerText>
+        <correctOrder>0</correctOrder>
+      </SortAnswerData>
+      <SortAnswerData>
+        <answerText>Answer 2</answerText>
+        <correctOrder>0</correctOrder>
+      </SortAnswerData>
+    </sortAnswers>
+  </SortItemData>
+</ArrayOfSortItemData>

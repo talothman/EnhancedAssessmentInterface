@@ -28,6 +28,7 @@ namespace eaivr
         {
             selectItemParent.SetSelectedAnswer(gameObject);
             GetComponent<VRTK_InteractableObject>().InteractableObjectUntouched += OnUntouched;
+            IncrementInteraction();
         }
 
         protected virtual void OnUntouched(object sender, InteractableObjectEventArgs e)

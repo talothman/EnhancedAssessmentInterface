@@ -32,6 +32,11 @@ namespace eaivr
 
             ageText.text = value.ToString();
         }
+
+        public override string GetSliderValue()
+        {
+            return ageText.text;
+        }
     }
 }
 

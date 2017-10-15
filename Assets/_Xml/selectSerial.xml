@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="Windows-1252"?>
 <ArrayOfSelectItemData xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
   <SelectItemData>
+    <questionID>tut1</questionID>
     <stem>What gender do you identify with?</stem>
     <selectAnswers>
       <SelectAnswerData>
@@ -22,6 +23,7 @@
     </selectAnswers>
   </SelectItemData>
   <SelectItemData>
+    <questionID>tut2</questionID>
     <stem>Which level describes your current educational status?</stem>
     <selectAnswers>
       <SelectAnswerData>
@@ -43,6 +45,7 @@
     </selectAnswers>
   </SelectItemData>
   <SelectItemData>
+    <questionID>sel0</questionID>
     <stem>What is the 3rd word sorted alphabetically?</stem>
     <selectAnswers>
       <SelectAnswerData>
@@ -64,6 +67,7 @@
     </selectAnswers>
   </SelectItemData>
   <SelectItemData>
+    <questionID>sel1</questionID>
     <stem>What is the 1st word sorted alphabetically?</stem>
     <selectAnswers>
       <SelectAnswerData>

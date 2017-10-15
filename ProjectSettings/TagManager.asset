@@ -11,6 +11,7 @@ TagManager:
   - GM
   - SceneGameManager
   - light
+  - MD
   layers:
   - Default
   - TransparentFX
