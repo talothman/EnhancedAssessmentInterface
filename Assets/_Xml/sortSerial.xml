@@ -66,4 +66,70 @@
       </SortAnswerData>
     </sortAnswers>
   </SortItemData>
+  <SortItemData>
+    <questionID>sor2</questionID>
+    <stem>The following words sorted alphabetically, from left to right are?</stem>
+    <sortAnswers>
+      <SortAnswerData>
+        <answerText>runner</answerText>
+        <correctOrder>2</correctOrder>
+      </SortAnswerData>
+      <SortAnswerData>
+        <answerText>race</answerText>
+        <correctOrder>0</correctOrder>
+      </SortAnswerData>
+      <SortAnswerData>
+        <answerText>rush</answerText>
+        <correctOrder>3</correctOrder>
+      </SortAnswerData>
+      <SortAnswerData>
+        <answerText>ran</answerText>
+        <correctOrder>1</correctOrder>
+      </SortAnswerData>
+    </sortAnswers>
+  </SortItemData>
+  <SortItemData>
+    <questionID>sor3</questionID>
+    <stem>The following words sorted alphabetically, from left to right are?</stem>
+    <sortAnswers>
+      <SortAnswerData>
+        <answerText>own</answerText>
+        <correctOrder>3</correctOrder>
+      </SortAnswerData>
+      <SortAnswerData>
+        <answerText>oak</answerText>
+        <correctOrder>0</correctOrder>
+      </SortAnswerData>
+      <SortAnswerData>
+        <answerText>oar</answerText>
+        <correctOrder>1</correctOrder>
+      </SortAnswerData>
+      <SortAnswerData>
+        <answerText>owl</answerText>
+        <correctOrder>2</correctOrder>
+      </SortAnswerData>
+    </sortAnswers>
+  </SortItemData>
+  <SortItemData>
+    <questionID>sor4</questionID>
+    <stem>The following words sorted alphabetically, from left to right are?</stem>
+    <sortAnswers>
+      <SortAnswerData>
+        <answerText>dark</answerText>
+        <correctOrder>3</correctOrder>
+      </SortAnswerData>
+      <SortAnswerData>
+        <answerText>dandelion</answerText>
+        <correctOrder>2</correctOrder>
+      </SortAnswerData>
+      <SortAnswerData>
+        <answerText>daisy</answerText>
+        <correctOrder>1</correctOrder>
+      </SortAnswerData>
+      <SortAnswerData>
+        <answerText>daffodil</answerText>
+        <correctOrder>0</correctOrder>
+      </SortAnswerData>
+    </sortAnswers>
+  </SortItemData>
 </ArrayOfSortItemData>

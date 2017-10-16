@@ -1901,6 +1901,13 @@ MonoBehaviour:
   canvasText: {fileID: 114196938064814488}
   gameManager: {fileID: 0}
   submitGameObject: {fileID: 1478772867609386}
+  firstInteraction: 0
+  answeredCorreclty: 0
+  questionID: 
+  timeStart: 0
+  timeToFirstInteraction: 0
+  timeEnded: 0
+  numOfInteractions: 0
   selectColor: {r: 0.9558824, g: 0.6326227, b: 0.38426474, a: 1}
   selectAnswers2D:
   - {fileID: 114826023528916640}
@@ -2279,7 +2286,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 1.6}
+  m_AnchoredPosition: {x: 0, y: 1.4}
   m_SizeDelta: {x: 1250, y: 672.164}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!224 &224132741911269260

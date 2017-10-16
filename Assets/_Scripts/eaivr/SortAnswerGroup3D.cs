@@ -8,6 +8,9 @@ namespace eaivr
     public class SortAnswerGroup3D : SortAnswerGroup
     {
         public SortAnswer3D[] threeDSortAnswers;
+        public Vector3[] originalPositions;
+        public Quaternion[] originalPose;
+
         // Use this for initialization
         void Start()
         {
@@ -16,18 +19,31 @@ namespace eaivr
 
             Array.Sort(threeDSortAnswers, ComparePosition);
 
+            originalPositions = new Vector3[threeDSortAnswers.Length];
+            originalPose = new Quaternion[threeDSortAnswers.Length];
+
             for (int i = 0; i < threeDSortAnswers.Length; i++)
             {
                 lRenderer.SetPosition(i, threeDSortAnswers[i].transform.position);
+                originalPositions[i] = threeDSortAnswers[i].transform.position;
+                originalPose[i] = threeDSortAnswers[i].transform.rotation;
             }
         }
 
-        // Update is called once per frame
         void Update()
         {
             for(int i = 0; i < threeDSortAnswers.Length; i++)
             {
                 lRenderer.SetPosition(i, threeDSortAnswers[i].transform.position);
+            }
+
+            if (Input.GetKeyDown(KeyCode.R))
+            {
+                for (int i = 0; i < threeDSortAnswers.Length; i++)
+                {                    
+                    threeDSortAnswers[i].transform.position = originalPositions[i];
+                    threeDSortAnswers[i].transform.rotation = originalPose[i];
+                }
             }
         }
 

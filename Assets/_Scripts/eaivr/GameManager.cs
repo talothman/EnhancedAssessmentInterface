@@ -55,13 +55,17 @@ namespace eaivr
 #if UNITY_EDITOR
             pathToSelectBank = Application.dataPath + "/_Xml/selectSerial.xml";
             pathToSortBank = Application.dataPath + "/_Xml/sortSerial.xml";
-#endif
 
-#if UNITY_STANDALONE_WIN
-
-#endif
             selectItemData = XmlUtility.Deserialize<SelectItemData[]>(pathToSelectBank);
             sortItemData = XmlUtility.Deserialize<SortItemData[]>(pathToSortBank);
+#endif
+
+#if UNITY_STANDALONE_WIN           
+
+            selectItemData = XmlUtility.DeserializeBuild<SelectItemData[]>("selectSerial");
+            sortItemData = XmlUtility.DeserializeBuild<SortItemData[]>("sortSerial");
+#endif
+
             Next();
         }
 
@@ -166,6 +170,11 @@ namespace eaivr
             if (currentActiveItem != null)
                 Destroy(currentActiveItem, 0.5f);
 
+            int randomInt = Random.Range(currentSelectItemIndex, selectItemData.Length);
+            SelectItemData tempSID = selectItemData[randomInt];
+            selectItemData[randomInt] = selectItemData[currentSelectItemIndex];
+            selectItemData[currentSelectItemIndex] = tempSID;
+
             StartCoroutine(DelayedFunctionRunner(() => {
                 currentActiveItem = Instantiate(selectItemPrefab);
                 currentActiveItem.GetComponent<SelectItem>().InsertItemData(selectItemData[currentSelectItemIndex++]);
@@ -190,6 +199,11 @@ namespace eaivr
 
             if (currentActiveItem != null)
                 Destroy(currentActiveItem, 0.5f);
+
+            int randomInt = Random.Range(currentSortItemIndex, sortItemData.Length);
+            SortItemData tempSID = sortItemData[randomInt];
+            sortItemData[randomInt] = sortItemData[currentSortItemIndex];
+            sortItemData[currentSortItemIndex] = tempSID;
 
             StartCoroutine(DelayedFunctionRunner(() => {
                 currentActiveItem = Instantiate(sortItemPrefab);

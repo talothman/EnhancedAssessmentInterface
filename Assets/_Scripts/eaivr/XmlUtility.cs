@@ -27,14 +27,21 @@ namespace eaivr
         public static T DeserializeBuild<T>(string path)
         {
             XmlSerializer serializer = new XmlSerializer(typeof(T));
-            StreamReader reader = new StreamReader(path);
             TextAsset textAsset = (TextAsset)Resources.Load(path, typeof(TextAsset));
-            XmlDocument xmlDocument = new XmlDocument();
-            xmlDocument.LoadXml(textAsset.text);
-            //serializer.Deserialize(xmlDocument);
-            T deserialized = (T)serializer.Deserialize(reader.BaseStream);
-            reader.Close();
-            return deserialized;
+
+            using (var reader = new System.IO.StringReader(textAsset.text))
+            {
+                return (T)serializer.Deserialize(reader);
+            }
+            //XmlSerializer serializer = new XmlSerializer(typeof(T));
+            //StreamReader reader = new StreamReader(path);
+
+            //XmlDocument xmlDocument = new XmlDocument();
+            //xmlDocument.LoadXml(textAsset.text);
+            ////serializer.Deserialize(xmlDocument);
+            //T deserialized = (T)serializer.Deserialize(reader.BaseStream);
+            //reader.Close();
+            //return deserialized;
         }
     }
 }
