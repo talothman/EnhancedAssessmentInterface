@@ -1948,7 +1948,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Use the pointers on your controller to slide the handle to your age
+  m_Text: Set your age by using your hand to drag the ball left or right
 --- !u!114 &114920086734476996
 MonoBehaviour:
   m_ObjectHideFlags: 1

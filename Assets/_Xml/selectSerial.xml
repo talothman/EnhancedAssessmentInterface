@@ -2,7 +2,7 @@
 <ArrayOfSelectItemData xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
   <SelectItemData>
     <questionID>tut1</questionID>
-    <stem>With which gender do you identify?</stem>
+    <stem>Which gender do you identify as?</stem>
     <selectAnswers>
       <SelectAnswerData>
         <answerText>Female</answerText>
@@ -17,7 +17,7 @@
         <isKey>true</isKey>
       </SelectAnswerData>
       <SelectAnswerData>
-        <answerText>Other</answerText>
+        <answerText>Prefer Not to Answer</answerText>
         <isKey>true</isKey>
       </SelectAnswerData>
     </selectAnswers>

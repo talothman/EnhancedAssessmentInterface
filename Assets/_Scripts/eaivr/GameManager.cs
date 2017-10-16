@@ -215,7 +215,7 @@ namespace eaivr
         {
             masterDriver.CloseDataFile();
             Destroy(currentActiveItem, 0.5f);
-            Application.Quit();
+            //Application.Quit();
         }
     }    
 }

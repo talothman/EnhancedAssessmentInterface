@@ -2,7 +2,7 @@
 <ArrayOfSortItemData xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
   <SortItemData>
     <questionID>tut3</questionID>
-    <stem>Use your controller to sort which terms most describe you from the left to the right.</stem>
+    <stem>Sort these boxes to describe which terms most describe you from the left to the right</stem>
     <sortAnswers>
       <SortAnswerData>
         <answerText>noob</answerText>

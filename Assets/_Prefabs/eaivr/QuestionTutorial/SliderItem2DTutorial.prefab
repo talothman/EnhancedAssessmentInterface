@@ -1442,7 +1442,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Use the pointers on your controller to slide the handle to your age
+  m_Text: Set your age by dragging the circle handle using the tip of your pointer
 --- !u!114 &114651849795432724
 MonoBehaviour:
   m_ObjectHideFlags: 1

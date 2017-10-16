@@ -91,15 +91,15 @@ public class HayehAnimation : MonoBehaviour {
         yield return new WaitForSeconds(3f);
         textBoxText.text = "Great job looking around!";
         textBoxAnimator.SetTrigger(showTextHash);
-        yield return new WaitForSeconds(2f);
+        yield return new WaitForSeconds(4f);
 
         hayehAnimator.SetTrigger(spiralHash);
         textBoxAnimator.SetTrigger(hideTextHash);
         yield return new WaitForSeconds(3f);
-        textBoxText.text = "Now look at your hands.";
+        textBoxText.text = "Now look at your hands and play around with the buttons on your controller.";
         textBoxAnimator.SetTrigger(showTextHash);
 
-        yield return new WaitForSeconds(3f);
+        yield return new WaitForSeconds(5f);
         textBoxAnimator.SetTrigger(hideTextHash);
 
         leftHandModel.SetActive(true);
@@ -111,13 +111,22 @@ public class HayehAnimation : MonoBehaviour {
             leftHandScript.GetComponent<VRTK_Pointer>().enabled = true;
             rightHandScript.GetComponent<VRTK_Pointer>().enabled = true;
 
-            textBoxText.text = "Use you controller pointers to select and drag items.";
+            textBoxText.text = "Use the pointers connected to your hands to interact with the questions you will be asked. Use the button closest to your index to select" +
+                "and Drag";
         }
         else
         {
-            textBoxText.text = "Use you controller to select and drag items.";
+            textBoxText.text = "Use hands to interact with the questions you will be asked. Use the button closest to your middle finger to select" +
+                "and Drag";
         }
 
+        textBoxAnimator.SetTrigger(showTextHash);
+        yield return new WaitForSeconds(10f);
+
+        textBoxAnimator.SetTrigger(hideTextHash);
+        yield return new WaitForSeconds(3f);
+        textBoxText.text = "Let's start with some basic questions";
+        
         textBoxAnimator.SetTrigger(showTextHash);
         yield return new WaitForSeconds(5f);
 
