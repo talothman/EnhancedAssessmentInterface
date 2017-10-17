@@ -30,9 +30,14 @@ namespace eaivr
             canvasText.text = selectItemData.stem;
             questionID = selectItemData.questionID;
             timeStart = Time.time;
-
+            
             for (int i = 0; i < selectAnswers3D.Length; i++)
             {
+                int tempRan = Random.Range(i, selectAnswers3D.Length);
+                SelectAnswerData tempSelectAnswerData = selectItemData.selectAnswers[tempRan];
+                selectItemData.selectAnswers[tempRan] = selectItemData.selectAnswers[i];
+                selectItemData.selectAnswers[i] = tempSelectAnswerData;
+
                 selectAnswers3D[i].GetComponentInChildren<Text>().text = selectItemData.selectAnswers[i].answerText;
                 selectAnswers3D[i].isKey = selectItemData.selectAnswers[i].isKey;
             }

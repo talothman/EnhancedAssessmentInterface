@@ -84,10 +84,10 @@ namespace eaivr
                 SceneManager.LoadScene(2, LoadSceneMode.Single);
         }
 
-        public void WriteBasicInfo(UserInfo userInfo)
+        public void WriteBasicInfo(float tutTime, UserInfo userInfo)
         {
-            dataWriter.WriteLine("age, gender, education, previous_comp_exp");
-            dataWriter.WriteLine(userInfo.age +"," + userInfo.gender + "," + userInfo.educationLevel + "," + userInfo.knowHow[0]);
+            dataWriter.WriteLine("age, gender, education, previous_comp_exp, tutorial_time");
+            dataWriter.WriteLine(userInfo.age +"," + userInfo.gender + "," + userInfo.educationLevel + "," + userInfo.knowHow[0] + "," + tutTime);
             dataWriter.WriteLine("qID, time_taken, time_to_first_interaction, num_of_interactions, answered_correctly");
             //CloseDataFile();
         }

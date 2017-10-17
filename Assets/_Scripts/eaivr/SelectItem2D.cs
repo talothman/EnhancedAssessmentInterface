@@ -27,6 +27,11 @@ namespace eaivr
 
             for (int i = 0; i < selectAnswers2D.Length; i++)
             {
+                int tempRan = Random.Range(i, selectAnswers2D.Length);
+                SelectAnswerData tempSelectAnswerData = selectItemData.selectAnswers[tempRan];
+                selectItemData.selectAnswers[tempRan] = selectItemData.selectAnswers[i];
+                selectItemData.selectAnswers[i] = tempSelectAnswerData;
+
                 selectAnswers2D[i].GetComponentInChildren<Text>().text = selectItemData.selectAnswers[i].answerText;
                 selectAnswers2D[i].isKey = selectItemData.selectAnswers[i].isKey;
             }

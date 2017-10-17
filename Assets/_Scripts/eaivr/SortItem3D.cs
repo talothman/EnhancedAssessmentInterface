@@ -29,6 +29,11 @@ namespace eaivr
 
             for (int i = 0; i < threeDSortAnswers.Length; i++)
             {
+                int tempRan = Random.Range(i, threeDSortAnswers.Length);
+                SortAnswerData tempSortAnswerData = sortItemData.sortAnswers[tempRan];
+                sortItemData.sortAnswers[tempRan] = sortItemData.sortAnswers[i];
+                sortItemData.sortAnswers[i] = tempSortAnswerData;
+
                 threeDSortAnswers[i].GetComponentInChildren<Text>().text = sortItemData.sortAnswers[i].answerText;
                 threeDSortAnswers[i].correctOrder = sortItemData.sortAnswers[i].correctOrder;
             }

@@ -80,6 +80,11 @@ namespace eaivr
 
             for (int i = 0; i < sortAnswers.Length; i++)
             {
+                int tempRan = Random.Range(i, sortAnswers.Length);
+                SortAnswerData tempSortAnswerData = sortItemData.sortAnswers[tempRan];
+                sortItemData.sortAnswers[tempRan] = sortItemData.sortAnswers[i];
+                sortItemData.sortAnswers[i] = tempSortAnswerData;
+
                 sortAnswers[i].GetComponentInChildren<Text>().text = sortItemData.sortAnswers[i].answerText;
                 sortAnswers[i].correctOrder = sortItemData.sortAnswers[i].correctOrder;
             }

@@ -47,6 +47,11 @@ namespace eaivr
 
         delegate void DelayedFunction();
 
+        float tutStartTime, tutEndTime;
+
+        public ParticleSystem particleSystem;
+        public GameObject particleParty;
+
         private void Start()
         {
             masterDriver = GameObject.FindGameObjectWithTag("MD").GetComponent<MasterDriver>();
@@ -114,6 +119,7 @@ namespace eaivr
                 {
                     case 1:
                         userInfo.age = currentActiveItem.GetComponent<SliderItem>().GetSliderValue();
+                        tutStartTime = Time.time;
                         break;
                     case 2:
                         userInfo.gender = currentActiveItem.GetComponent<SelectItem>().GetSelectedAnswer();
@@ -129,7 +135,9 @@ namespace eaivr
                         else
                             stage = Stage.SORT;
 
-                        masterDriver.WriteBasicInfo(userInfo);
+                        tutEndTime = Time.time;
+                        masterDriver.WriteBasicInfo((tutEndTime - tutStartTime), userInfo);
+                        particleSystem.Play();
                         Next();
                         return;
                     default:
@@ -178,6 +186,7 @@ namespace eaivr
                 else
                     stage = Stage.MEMORY;
 
+                particleSystem.Play();
                 Next();
                 return;
             }
@@ -213,6 +222,7 @@ namespace eaivr
                 else
                     stage = Stage.SELECT;
 
+                particleSystem.Play();
                 Next();
                 return;
             }
@@ -245,6 +255,7 @@ namespace eaivr
             {                
                 stage = Stage.HEALTH;
 
+                particleSystem.Play();
                 Next();
                 return;
             }
@@ -312,7 +323,15 @@ namespace eaivr
         {
             masterDriver.CloseDataFile();
             Destroy(currentActiveItem, 0.5f);
-            //Application.Quit();
+            
+            StartCoroutine(PartyThenDie());
+        }
+
+        IEnumerator PartyThenDie()
+        {
+            particleParty.SetActive(true);
+            yield return new WaitForSeconds(30f);
+            Application.Quit();
         }
     }    
 }
