@@ -12,6 +12,7 @@ TagManager:
   - SceneGameManager
   - light
   - MD
+  - hayeh
   layers:
   - Default
   - TransparentFX

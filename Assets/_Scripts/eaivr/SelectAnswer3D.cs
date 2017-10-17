@@ -9,9 +9,12 @@ namespace eaivr
     public class SelectAnswer3D : SelectAnswer
     {
         private VRTK_Button_UnityEvents buttonEvents;
-        // Use this for initialization
+        AudioSource selectAudio;
+
         void Start()
         {
+            selectAudio = GetComponent<AudioSource>();
+
             selectItemParent = transform.GetComponentInParent<SelectItem3D>();
 
             buttonEvents = GetComponent<VRTK_Button_UnityEvents>();
@@ -29,6 +32,7 @@ namespace eaivr
             selectItemParent.SetSelectedAnswer(gameObject);
             GetComponent<VRTK_InteractableObject>().InteractableObjectUntouched += OnUntouched;
             IncrementInteraction();
+            selectAudio.Play();
         }
 
         protected virtual void OnUntouched(object sender, InteractableObjectEventArgs e)

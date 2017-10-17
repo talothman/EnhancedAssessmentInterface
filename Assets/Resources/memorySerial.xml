@@ -1,55 +1,11 @@
 <?xml version="1.0" encoding="Windows-1252"?>
 <ArrayOfSelectItemData xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
   <SelectItemData>
-    <questionID>tut1</questionID>
-    <stem>Gender?</stem>
+    <questionID>mem0</questionID>
+    <stem>Select the word that has previously appeared</stem>
     <selectAnswers>
       <SelectAnswerData>
-        <answerText>Female</answerText>
-        <isKey>true</isKey>
-      </SelectAnswerData>
-      <SelectAnswerData>
-        <answerText>Male</answerText>
-        <isKey>true</isKey>
-      </SelectAnswerData>
-      <SelectAnswerData>
-        <answerText>Nonbinary</answerText>
-        <isKey>true</isKey>
-      </SelectAnswerData>
-      <SelectAnswerData>
-        <answerText>Prefer Not to Answer</answerText>
-        <isKey>true</isKey>
-      </SelectAnswerData>
-    </selectAnswers>
-  </SelectItemData>
-  <SelectItemData>
-    <questionID>tut2</questionID>
-    <stem>What is your current educational status?</stem>
-    <selectAnswers>
-      <SelectAnswerData>
-        <answerText>Undergraduate</answerText>
-        <isKey>true</isKey>
-      </SelectAnswerData>
-      <SelectAnswerData>
-        <answerText>Graduate Student</answerText>
-        <isKey>true</isKey>
-      </SelectAnswerData>
-      <SelectAnswerData>
-        <answerText>Graduated</answerText>
-        <isKey>true</isKey>
-      </SelectAnswerData>
-      <SelectAnswerData>
-        <answerText>Other</answerText>
-        <isKey>true</isKey>
-      </SelectAnswerData>
-    </selectAnswers>
-  </SelectItemData>
-  <SelectItemData>
-    <questionID>sel0</questionID>
-    <stem>Select the 3rd word sorted alphabetically</stem>
-    <selectAnswers>
-      <SelectAnswerData>
-        <answerText>craftsman</answerText>
+        <answerText>crane</answerText>
         <isKey>false</isKey>
       </SelectAnswerData>
       <SelectAnswerData>
@@ -57,51 +13,51 @@
         <isKey>true</isKey>
       </SelectAnswerData>
       <SelectAnswerData>
-        <answerText>cranky</answerText>
+        <answerText>crang</answerText>
         <isKey>false</isKey>
       </SelectAnswerData>
       <SelectAnswerData>
-        <answerText>craft</answerText>
+        <answerText>crack</answerText>
         <isKey>false</isKey>
       </SelectAnswerData>
     </selectAnswers>
   </SelectItemData>
   <SelectItemData>
-    <questionID>sel1</questionID>
-    <stem>Select the 1st word sorted alphabetically</stem>
+    <questionID>mem1</questionID>
+    <stem>Select the word that has previously appeared</stem>
     <selectAnswers>
       <SelectAnswerData>
         <answerText>trapeze</answerText>
         <isKey>true</isKey>
       </SelectAnswerData>
       <SelectAnswerData>
-        <answerText>trapper</answerText>
+        <answerText>cheese</answerText>
         <isKey>false</isKey>
       </SelectAnswerData>
       <SelectAnswerData>
-        <answerText>treatment</answerText>
+        <answerText>freeze</answerText>
         <isKey>false</isKey>
       </SelectAnswerData>
       <SelectAnswerData>
-        <answerText>traveler</answerText>
+        <answerText>keys</answerText>
         <isKey>false</isKey>
       </SelectAnswerData>
     </selectAnswers>
   </SelectItemData>
   <SelectItemData>
-    <questionID>sel2</questionID>
-    <stem>Select the 2nd word sorted alphabetically</stem>
+    <questionID>mem2</questionID>
+    <stem>Select the word that has previously appeared</stem>
     <selectAnswers>
       <SelectAnswerData>
-        <answerText>skyline</answerText>
+        <answerText>scout</answerText>
         <isKey>false</isKey>
       </SelectAnswerData>
       <SelectAnswerData>
-        <answerText>skiing</answerText>
+        <answerText>stuck</answerText>
         <isKey>false</isKey>
       </SelectAnswerData>
       <SelectAnswerData>
-        <answerText>skyscraper</answerText>
+        <answerText>sunk</answerText>
         <isKey>false</isKey>
       </SelectAnswerData>
       <SelectAnswerData>
@@ -111,15 +67,15 @@
     </selectAnswers>
   </SelectItemData>
   <SelectItemData>
-    <questionID>sel3</questionID>
-    <stem>Select the 4th word sorted alphabetically</stem>
+    <questionID>mem3</questionID>
+    <stem>Select the word that has previously appeared</stem>
     <selectAnswers>
       <SelectAnswerData>
-        <answerText>breeze</answerText>
+        <answerText>breen</answerText>
         <isKey>false</isKey>
       </SelectAnswerData>
       <SelectAnswerData>
-        <answerText>breathe</answerText>
+        <answerText>breed</answerText>
         <isKey>false</isKey>
       </SelectAnswerData>
       <SelectAnswerData>
@@ -127,25 +83,25 @@
         <isKey>true</isKey>
       </SelectAnswerData>
       <SelectAnswerData>
-        <answerText>bread</answerText>
+        <answerText>bee</answerText>
         <isKey>false</isKey>
       </SelectAnswerData>
     </selectAnswers>
   </SelectItemData>
   <SelectItemData>
-    <questionID>sel4</questionID>
-    <stem>Select the 1st word sorted alphabetically</stem>
+    <questionID>mem4</questionID>
+    <stem>Select the word that has previously appeared</stem>
     <selectAnswers>
       <SelectAnswerData>
-        <answerText>larva</answerText>
+        <answerText>ache</answerText>
         <isKey>false</isKey>
       </SelectAnswerData>
       <SelectAnswerData>
-        <answerText>leaflet</answerText>
+        <answerText>crake</answerText>
         <isKey>false</isKey>
       </SelectAnswerData>
       <SelectAnswerData>
-        <answerText>learn</answerText>
+        <answerText>bake</answerText>
         <isKey>false</isKey>
       </SelectAnswerData>
       <SelectAnswerData>
@@ -155,111 +111,111 @@
     </selectAnswers>
   </SelectItemData>
   <SelectItemData>
-    <questionID>sel5</questionID>
-    <stem>Select the 3rd word sorted alphabetically</stem>
+    <questionID>mem5</questionID>
+    <stem>Select the word that has previously appeared</stem>
     <selectAnswers>
       <SelectAnswerData>
-        <answerText>measure</answerText>
-        <isKey>true</isKey>
-      </SelectAnswerData>
-      <SelectAnswerData>
-        <answerText>maze</answerText>
+        <answerText>raft</answerText>
         <isKey>false</isKey>
       </SelectAnswerData>
       <SelectAnswerData>
-        <answerText>mayor</answerText>
+        <answerText>crake</answerText>
         <isKey>false</isKey>
       </SelectAnswerData>
       <SelectAnswerData>
-        <answerText>measurement</answerText>
-        <isKey>false</isKey>
-      </SelectAnswerData>
-    </selectAnswers>
-  </SelectItemData>
-  <SelectItemData>
-    <questionID>sel6</questionID>
-    <stem>Select the 2nd word sorted alphabetically</stem>
-    <selectAnswers>
-      <SelectAnswerData>
-        <answerText>sloth</answerText>
+        <answerText>daft</answerText>
         <isKey>false</isKey>
       </SelectAnswerData>
       <SelectAnswerData>
-        <answerText>slime</answerText>
-        <isKey>false</isKey>
-      </SelectAnswerData>
-      <SelectAnswerData>
-        <answerText>slouch</answerText>
-        <isKey>false</isKey>
-      </SelectAnswerData>
-      <SelectAnswerData>
-        <answerText>slither</answerText>
+        <answerText>craft</answerText>
         <isKey>true</isKey>
       </SelectAnswerData>
     </selectAnswers>
   </SelectItemData>
   <SelectItemData>
-    <questionID>sel7</questionID>
-    <stem>Select the 2nd word sorted alphabetically</stem>
+    <questionID>mem6</questionID>
+    <stem>Select the word that has previously appeared</stem>
     <selectAnswers>
       <SelectAnswerData>
-        <answerText>laughing</answerText>
-        <isKey>false</isKey>
-      </SelectAnswerData>
-      <SelectAnswerData>
-        <answerText>lately</answerText>
+        <answerText>runner</answerText>
         <isKey>true</isKey>
       </SelectAnswerData>
       <SelectAnswerData>
-        <answerText>lasting</answerText>
+        <answerText>stunner</answerText>
         <isKey>false</isKey>
       </SelectAnswerData>
       <SelectAnswerData>
-        <answerText>later</answerText>
+        <answerText>gunner</answerText>
+        <isKey>false</isKey>
+      </SelectAnswerData>
+      <SelectAnswerData>
+        <answerText>forerunner</answerText>
         <isKey>false</isKey>
       </SelectAnswerData>
     </selectAnswers>
   </SelectItemData>
   <SelectItemData>
-    <questionID>sel8</questionID>
-    <stem>Select the 3rd word sorted alphabetically</stem>
+    <questionID>mem7</questionID>
+    <stem>Select the word that has previously appeared</stem>
     <selectAnswers>
       <SelectAnswerData>
-        <answerText>airmail</answerText>
+        <answerText>clone</answerText>
         <isKey>false</isKey>
       </SelectAnswerData>
       <SelectAnswerData>
-        <answerText>alternate</answerText>
-        <isKey>false</isKey>
-      </SelectAnswerData>
-      <SelectAnswerData>
-        <answerText>amaze</answerText>
-        <isKey>false</isKey>
-      </SelectAnswerData>
-      <SelectAnswerData>
-        <answerText>aluminum</answerText>
+        <answerText>own</answerText>
         <isKey>true</isKey>
+      </SelectAnswerData>
+      <SelectAnswerData>
+        <answerText>drone</answerText>
+        <isKey>false</isKey>
+      </SelectAnswerData>
+      <SelectAnswerData>
+        <answerText>bone</answerText>
+        <isKey>false</isKey>
       </SelectAnswerData>
     </selectAnswers>
   </SelectItemData>
   <SelectItemData>
-    <questionID>sel9</questionID>
-    <stem>Select the 4th word sorted alphabetically</stem>
+    <questionID>mem8</questionID>
+    <stem>Select the word that has previously appeared</stem>
     <selectAnswers>
       <SelectAnswerData>
-        <answerText>allowed</answerText>
+        <answerText>lazy</answerText>
         <isKey>false</isKey>
       </SelectAnswerData>
       <SelectAnswerData>
-        <answerText>alternative</answerText>
+        <answerText>glazy</answerText>
+        <isKey>false</isKey>
+      </SelectAnswerData>
+      <SelectAnswerData>
+        <answerText>daisy</answerText>
         <isKey>true</isKey>
       </SelectAnswerData>
       <SelectAnswerData>
-        <answerText>allowance</answerText>
+        <answerText>crazy</answerText>
+        <isKey>false</isKey>
+      </SelectAnswerData>
+    </selectAnswers>
+  </SelectItemData>
+  <SelectItemData>
+    <questionID>mem9</questionID>
+    <stem>Select the word that has previously appeared</stem>
+    <selectAnswers>
+      <SelectAnswerData>
+        <answerText>scare</answerText>
+        <isKey>true</isKey>
+      </SelectAnswerData>
+      <SelectAnswerData>
+        <answerText>air</answerText>
         <isKey>false</isKey>
       </SelectAnswerData>
       <SelectAnswerData>
-        <answerText>airplane</answerText>
+        <answerText>care</answerText>
+        <isKey>false</isKey>
+      </SelectAnswerData>
+      <SelectAnswerData>
+        <answerText>glare</answerText>
         <isKey>false</isKey>
       </SelectAnswerData>
     </selectAnswers>

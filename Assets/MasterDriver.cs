@@ -100,5 +100,15 @@ namespace eaivr
                 "," + item.numOfInteractions
                 + "," + item.answeredCorreclty);
         }
+
+        public void WriteSliderResponse(SliderItem sliderItem)
+        {
+            dataWriter.WriteLine(sliderItem.questionID +
+                "," + (sliderItem.timeEnded - sliderItem.timeStart) +
+                "," + (sliderItem.timeToFirstInteraction - sliderItem.timeStart) +
+                "," + sliderItem.numOfInteractions
+                + "," + sliderItem.answeredCorreclty
+                + "," + sliderItem.GetSliderValue());
+        }
     }
 }

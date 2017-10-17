@@ -12,15 +12,17 @@ namespace eaivr
         public string[] knowHow;
     }
 
-    enum Stage { TUTORIAL, SELECT, SORT, OUTRO }
+    enum Stage { TUTORIAL, SELECT, SORT, MEMORY, HEALTH, OUTRO }
     
     public class GameManager : MonoBehaviour
     {
         public string pathToSelectBank;
         public string pathToSortBank;
+        public string pathToMemoryBank;
 
         public SelectItemData[] selectItemData;
         public SortItemData[] sortItemData;
+        public SelectItemData[] memoryItemData;
 
         public GameObject sliderQuestionPrefab;
         //public GameObject sortItemTutorialPrefab;
@@ -31,6 +33,8 @@ namespace eaivr
         int currentIntroItemIndex = 0;
         int currentSelectItemIndex = 0;
         int currentSortItemIndex = 0;
+        int currentMemoryQuestionItemIndex = 0;
+
         public GameObject currentActiveItem;
 
         bool finishedAllIntroQuestions = false;
@@ -39,12 +43,14 @@ namespace eaivr
         private MasterDriver masterDriver;
 
         private Stage stage;
+        private HayehAnimation hayehAnimation;
 
         delegate void DelayedFunction();
 
         private void Start()
         {
             masterDriver = GameObject.FindGameObjectWithTag("MD").GetComponent<MasterDriver>();
+            //hayehAnimation = GameObject.FindGameObjectWithTag("hayeh").GetComponent<HayehAnimation>();
             stage = Stage.TUTORIAL;
             LoadQuestionsFromDisk();
         }
@@ -55,15 +61,18 @@ namespace eaivr
 #if UNITY_EDITOR
             pathToSelectBank = Application.dataPath + "/_Xml/selectSerial.xml";
             pathToSortBank = Application.dataPath + "/_Xml/sortSerial.xml";
+            pathToMemoryBank = Application.dataPath + "/_Xml/memorySerial.xml";
 
             selectItemData = XmlUtility.Deserialize<SelectItemData[]>(pathToSelectBank);
             sortItemData = XmlUtility.Deserialize<SortItemData[]>(pathToSortBank);
+            memoryItemData = XmlUtility.Deserialize<SelectItemData[]>(pathToMemoryBank);
 #endif
 
 #if UNITY_STANDALONE_WIN           
 
             selectItemData = XmlUtility.DeserializeBuild<SelectItemData[]>("selectSerial");
             sortItemData = XmlUtility.DeserializeBuild<SortItemData[]>("sortSerial");
+            memoryItemData = XmlUtility.DeserializeBuild<SelectItemData[]>("memorySerial");
 #endif
 
             Next();
@@ -83,13 +92,17 @@ namespace eaivr
             {
                 LoadSortQuestion();
             }
-            else
+            else if (stage == Stage.MEMORY)
+                LoadMemoryQuestion();
+            else if (stage == Stage.HEALTH)
+                LoadHealthQuestions();
+            else if (stage == Stage.OUTRO)
                 LoadOutro();
         }
 
         IEnumerator DelayedFunctionRunner(DelayedFunction delayedFunction)
         {
-            yield return new WaitForSeconds(0.6f);
+            yield return new WaitForSeconds(0.9f);
             delayedFunction.Invoke();
         }
 
@@ -131,6 +144,8 @@ namespace eaivr
             {
                 StartCoroutine(DelayedFunctionRunner(() => {
                     currentActiveItem = Instantiate(sliderQuestionPrefab);
+                    currentActiveItem.GetComponent<SliderItem>().InsertSliderData("age0", "Set your age by dragging" +
+                        " the handle left or right", 16, 65);
                 }));
             }
             else if (currentIntroItemIndex == 3)
@@ -161,7 +176,7 @@ namespace eaivr
                 if(masterDriver.experinmentType == MasterDriver.ExperinmentType.RAY)
                     stage = Stage.SORT;
                 else
-                    stage = Stage.OUTRO;
+                    stage = Stage.MEMORY;
 
                 Next();
                 return;
@@ -174,6 +189,11 @@ namespace eaivr
             SelectItemData tempSID = selectItemData[randomInt];
             selectItemData[randomInt] = selectItemData[currentSelectItemIndex];
             selectItemData[currentSelectItemIndex] = tempSID;
+
+            if(currentSelectItemIndex == 2)
+            {
+                selectItemData[currentSelectItemIndex].stem = "Now, " + selectItemData[currentSelectItemIndex].stem;
+            }
 
             StartCoroutine(DelayedFunctionRunner(() => {
                 currentActiveItem = Instantiate(selectItemPrefab);
@@ -189,7 +209,7 @@ namespace eaivr
             if (currentSortItemIndex >= sortItemData.Length)
             {
                 if (masterDriver.experinmentType == MasterDriver.ExperinmentType.RAY)
-                    stage = Stage.OUTRO;
+                    stage = Stage.MEMORY;
                 else
                     stage = Stage.SELECT;
 
@@ -205,10 +225,87 @@ namespace eaivr
             sortItemData[randomInt] = sortItemData[currentSortItemIndex];
             sortItemData[currentSortItemIndex] = tempSID;
 
+            if (currentSortItemIndex == 1)
+            {
+                sortItemData[currentSortItemIndex].stem = "Now, " + sortItemData[currentSortItemIndex].stem;
+            }
+
             StartCoroutine(DelayedFunctionRunner(() => {
                 currentActiveItem = Instantiate(sortItemPrefab);
                 currentActiveItem.GetComponent<SortItem>().InsertItemData(sortItemData[currentSortItemIndex++]);
             }));
+        }
+
+        public void LoadMemoryQuestion()
+        {
+            if (currentMemoryQuestionItemIndex != 0)
+                masterDriver.WriteItemResponse(currentActiveItem.GetComponent<Item>());
+
+            if (currentMemoryQuestionItemIndex >= memoryItemData.Length)
+            {                
+                stage = Stage.HEALTH;
+
+                Next();
+                return;
+            }
+
+            if (currentActiveItem != null)
+                Destroy(currentActiveItem, 0.5f);
+
+            int randomInt = Random.Range(currentMemoryQuestionItemIndex, memoryItemData.Length);
+            SelectItemData tempSID = memoryItemData[randomInt];
+            memoryItemData[randomInt] = memoryItemData[currentMemoryQuestionItemIndex];
+            memoryItemData[currentMemoryQuestionItemIndex] = tempSID;
+
+            if (currentMemoryQuestionItemIndex == 0)
+            {
+                memoryItemData[currentMemoryQuestionItemIndex].stem = "Now, " + memoryItemData[currentMemoryQuestionItemIndex].stem;
+            }
+
+            StartCoroutine(DelayedFunctionRunner(() => {
+                currentActiveItem = Instantiate(selectItemPrefab);
+                currentActiveItem.GetComponent<SelectItem>().InsertItemData(memoryItemData[currentMemoryQuestionItemIndex++]);
+            }));
+        }
+
+        int currentHealthQuestionIndex = 0;
+
+        public void LoadHealthQuestions()
+        {
+            if(currentHealthQuestionIndex == 0)
+            {
+                if (currentActiveItem != null)
+                    Destroy(currentActiveItem, 0.5f);
+
+                StartCoroutine(DelayedFunctionRunner(() => {
+                    currentActiveItem = Instantiate(sliderQuestionPrefab);
+                    currentActiveItem.GetComponent<SliderItem>().InsertSliderData("hel0", "On a scale from 1 to 5, with 1 being not comfortable at" +
+                        " all and 5 being very comfortable, how comfortable was the experience?", 1, 5);
+                    currentHealthQuestionIndex++;
+                }));
+
+            }
+            else if(currentHealthQuestionIndex == 1)
+            {
+                masterDriver.WriteSliderResponse(currentActiveItem.GetComponent<SliderItem>());
+
+                if (currentActiveItem != null)
+                    Destroy(currentActiveItem, 0.5f);
+
+                StartCoroutine(DelayedFunctionRunner(() => {
+                    currentActiveItem = Instantiate(sliderQuestionPrefab);
+                    currentActiveItem.GetComponent<SliderItem>().InsertSliderData("hel1", "On a scale from 1 to 5, with 1 being not immersed" +
+                        " and 5 being very immersed, how immersive was the experience?", 1, 5);
+                    currentHealthQuestionIndex++;
+                }));
+            }
+            else if (currentHealthQuestionIndex == 2)
+            {
+                masterDriver.WriteSliderResponse(currentActiveItem.GetComponent<SliderItem>());
+                //write to file
+                stage = Stage.OUTRO;
+                Next();
+            }
         }
 
         public void LoadOutro()

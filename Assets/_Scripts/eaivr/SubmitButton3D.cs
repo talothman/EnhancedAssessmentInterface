@@ -10,10 +10,11 @@ namespace eaivr
     public class SubmitButton3D : SubmitButton
     {
         private VRTK_Button_UnityEvents buttonEvents;
-        
+        AudioSource buttonSound;
         void Start()
         {
             itemInParent = transform.GetComponentInParent<Item>();
+            buttonSound = GetComponent<AudioSource>();
 
             buttonEvents = GetComponent<VRTK_Button_UnityEvents>();
             if (buttonEvents == null)
@@ -39,6 +40,7 @@ namespace eaivr
         {
             //buttonEvents.OnPushed.RemoveListener(OnNext);
             itemInParent.NextQuestion();
+            buttonSound.Play();
         }
     }
 }

@@ -2,7 +2,7 @@
 <ArrayOfSortItemData xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
   <SortItemData>
     <questionID>tut3</questionID>
-    <stem>Use your controller to sort which terms most describe you from the left to the right.</stem>
+    <stem>Sort which terms most describe you from the left to the right</stem>
     <sortAnswers>
       <SortAnswerData>
         <answerText>noob</answerText>
@@ -17,14 +17,14 @@
         <correctOrder>2</correctOrder>
       </SortAnswerData>
       <SortAnswerData>
-        <answerText>hardcore gamer</answerText>
+        <answerText>professional gamer</answerText>
         <correctOrder>3</correctOrder>
       </SortAnswerData>
     </sortAnswers>
   </SortItemData>
   <SortItemData>
     <questionID>sor0</questionID>
-    <stem>The following words sorted alphabetically, from left to right are?</stem>
+    <stem>Sort the words below alphabetically, from left to right</stem>
     <sortAnswers>
       <SortAnswerData>
         <answerText>craftsman</answerText>
@@ -46,7 +46,7 @@
   </SortItemData>
   <SortItemData>
     <questionID>sor1</questionID>
-    <stem>The following words sorted alphabetically, from left to right are?</stem>
+    <stem>Sort the words below alphabetically, from left to right</stem>
     <sortAnswers>
       <SortAnswerData>
         <answerText>trapeze</answerText>
@@ -68,7 +68,7 @@
   </SortItemData>
   <SortItemData>
     <questionID>sor2</questionID>
-    <stem>The following words sorted alphabetically, from left to right are?</stem>
+    <stem>Sort the words below alphabetically, from left to right</stem>
     <sortAnswers>
       <SortAnswerData>
         <answerText>runner</answerText>
@@ -90,7 +90,7 @@
   </SortItemData>
   <SortItemData>
     <questionID>sor3</questionID>
-    <stem>The following words sorted alphabetically, from left to right are?</stem>
+    <stem>Sort the words below alphabetically, from left to right</stem>
     <sortAnswers>
       <SortAnswerData>
         <answerText>own</answerText>
@@ -112,7 +112,7 @@
   </SortItemData>
   <SortItemData>
     <questionID>sor4</questionID>
-    <stem>The following words sorted alphabetically, from left to right are?</stem>
+    <stem>Sort the words below alphabetically, from left to right</stem>
     <sortAnswers>
       <SortAnswerData>
         <answerText>dark</answerText>
@@ -129,6 +129,116 @@
       <SortAnswerData>
         <answerText>daffodil</answerText>
         <correctOrder>0</correctOrder>
+      </SortAnswerData>
+    </sortAnswers>
+  </SortItemData>
+  <SortItemData>
+    <questionID>sor5</questionID>
+    <stem>Sort the words below alphabetically, from left to right</stem>
+    <sortAnswers>
+      <SortAnswerData>
+        <answerText>sandal</answerText>
+        <correctOrder>0</correctOrder>
+      </SortAnswerData>
+      <SortAnswerData>
+        <answerText>send</answerText>
+        <correctOrder>3</correctOrder>
+      </SortAnswerData>
+      <SortAnswerData>
+        <answerText>seen</answerText>
+        <correctOrder>2</correctOrder>
+      </SortAnswerData>
+      <SortAnswerData>
+        <answerText>scare</answerText>
+        <correctOrder>1</correctOrder>
+      </SortAnswerData>
+    </sortAnswers>
+  </SortItemData>
+  <SortItemData>
+    <questionID>sor6</questionID>
+    <stem>Sort the words below alphabetically, from left to right</stem>
+    <sortAnswers>
+      <SortAnswerData>
+        <answerText>robin</answerText>
+        <correctOrder>3</correctOrder>
+      </SortAnswerData>
+      <SortAnswerData>
+        <answerText>rain</answerText>
+        <correctOrder>0</correctOrder>
+      </SortAnswerData>
+      <SortAnswerData>
+        <answerText>rainy</answerText>
+        <correctOrder>2</correctOrder>
+      </SortAnswerData>
+      <SortAnswerData>
+        <answerText>rainbow</answerText>
+        <correctOrder>1</correctOrder>
+      </SortAnswerData>
+    </sortAnswers>
+  </SortItemData>
+  <SortItemData>
+    <questionID>sor7</questionID>
+    <stem>Sort the words below alphabetically, from left to right</stem>
+    <sortAnswers>
+      <SortAnswerData>
+        <answerText>east</answerText>
+        <correctOrder>0</correctOrder>
+      </SortAnswerData>
+      <SortAnswerData>
+        <answerText>enter</answerText>
+        <correctOrder>3</correctOrder>
+      </SortAnswerData>
+      <SortAnswerData>
+        <answerText>easy</answerText>
+        <correctOrder>1</correctOrder>
+      </SortAnswerData>
+      <SortAnswerData>
+        <answerText>end</answerText>
+        <correctOrder>2</correctOrder>
+      </SortAnswerData>
+    </sortAnswers>
+  </SortItemData>
+  <SortItemData>
+    <questionID>sor8</questionID>
+    <stem>Sort the words below alphabetically, from left to right</stem>
+    <sortAnswers>
+      <SortAnswerData>
+        <answerText>garden</answerText>
+        <correctOrder>0</correctOrder>
+      </SortAnswerData>
+      <SortAnswerData>
+        <answerText>grass</answerText>
+        <correctOrder>1</correctOrder>
+      </SortAnswerData>
+      <SortAnswerData>
+        <answerText>grow</answerText>
+        <correctOrder>3</correctOrder>
+      </SortAnswerData>
+      <SortAnswerData>
+        <answerText>green</answerText>
+        <correctOrder>2</correctOrder>
+      </SortAnswerData>
+    </sortAnswers>
+  </SortItemData>
+  <SortItemData>
+    <questionID>sor9</questionID>
+    <stem>Sort the words below alphabetically, from left to right</stem>
+    <sortAnswers>
+      <SortAnswerData>
+        <answerText>truck</answerText>
+        <correctOrder>1</correctOrder>
+      </SortAnswerData>
+      <SortAnswerData>
+        <answerText>trek</answerText>
+        <correctOrder>0</correctOrder>
+      </SortAnswerData>
+      <SortAnswerData>
+        <answerText>truncate</answerText>
+        <correctOrder>3</correctOrder>
+      </SortAnswerData>
+      <SortAnswerData>
+        <answerText>truly</answerText>
+        <correctOrder>2</correctOrder>
       </SortAnswerData>
     </sortAnswers>
   </SortItemData>

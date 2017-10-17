@@ -356,7 +356,7 @@ GameObject:
   - component: {fileID: 114818636251557666}
   m_Layer: 0
   m_Name: Hayeh
-  m_TagString: Untagged
+  m_TagString: hayeh
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1598,9 +1598,13 @@ MonoBehaviour:
   rightHandModel: {fileID: 0}
   leftHandScript: {fileID: 0}
   rightHandScript: {fileID: 0}
+  leftToolTip: {fileID: 0}
+  rightToolTip: {fileID: 0}
   treeLeft: {fileID: 1333830513558426}
   treeRight: {fileID: 1252130728805428}
   gameManager: {fileID: 0}
+  avatar: {fileID: 0}
+  debug: 1
 --- !u!198 &198165486482208358
 ParticleSystem:
   m_ObjectHideFlags: 1
